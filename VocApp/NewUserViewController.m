@@ -7,12 +7,69 @@
 //
 
 #import "NewUserViewController.h"
+#import "User.h"
 
 @interface NewUserViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *vorname;
+@property (weak, nonatomic) IBOutlet UITextField *nachname;
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *passwort;
+@property (weak, nonatomic) IBOutlet UITextField *passwortwdh;
 
 @end
 
 @implementation NewUserViewController
+- (IBAction)okPressed:(id)sender {
+    User *user =[User new];
+    if([_vorname.text isEqualToString:@""]){
+        _vorname.backgroundColor= [UIColor redColor];
+        _vorname.placeholder=@"Bitte Vorname angeben";
+        NSLog(@"Vorname fehlt");
+    }else{
+        user.forename=_vorname.text;
+    }
+    if([_nachname.text isEqualToString:@""]){
+        _nachname.backgroundColor=[UIColor redColor];
+        _nachname.placeholder=@"Bitte Nachname angeben";
+        NSLog(@"Nachname fehlt");
+    }else{
+        user.surname=_nachname.text;
+    }
+    if([_username.text isEqualToString:@""]){
+        _username.backgroundColor=[UIColor redColor];
+        _username.placeholder=@"Bitte Username angeben";
+        NSLog(@"username fehlt");
+    }else{
+        user.username=_username.text;
+    }
+    if([_email.text isEqualToString:@""]){
+        _email.backgroundColor=[UIColor blueColor];
+        _email.placeholder=@"Bitte E-Mail-Adresse angeben";
+    }else{
+        user.mail=_email.text;
+    }
+    if((![_passwort.text isEqualToString: _passwortwdh.text])||([_passwort.text isEqualToString:@""] )){
+        _passwortwdh.backgroundColor=[UIColor redColor];
+        _passwortwdh.placeholder=@"Passwort muss übereinstimmen";
+        _passwort.placeholder=@"Passwort muss übereinstimmen";
+        _passwort.backgroundColor=[UIColor redColor];
+    }else{
+        user.password=_passwort.text;
+    }
+    
+    if([user isComplete]){
+        
+        NSLog(@"%@", user.forename);
+        NSLog(@"%@", user.surname);
+        [user signUp];
+        NSLog(@"complete");
+    }
+    
+}
+- (IBAction)CancelPressed:(id)sender {
+    self.view.hidden=YES ;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
