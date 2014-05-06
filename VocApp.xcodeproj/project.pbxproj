@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2210C8031915015C00816EF1 /* LogIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210C8021915015C00816EF1 /* LogIn.m */; };
 		222458E71913CFB600CBBB9C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 222458E61913CFB600CBBB9C /* User.m */; };
 		224274951913C17600B505C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274941913C17600B505C0 /* Foundation.framework */; };
 		224274971913C17600B505C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274961913C17600B505C0 /* CoreGraphics.framework */; };
@@ -15,7 +16,7 @@
 		224274A11913C17600B505C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 224274A01913C17600B505C0 /* main.m */; };
 		224274A51913C17600B505C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 224274A41913C17600B505C0 /* AppDelegate.m */; };
 		224274A81913C17600B505C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224274A61913C17600B505C0 /* Main.storyboard */; };
-		224274AB1913C17600B505C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224274AA1913C17600B505C0 /* ViewController.m */; };
+		224274AB1913C17600B505C0 /*  LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224274AA1913C17600B505C0 /*  LoginViewController.m */; };
 		224274AD1913C17600B505C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224274AC1913C17600B505C0 /* Images.xcassets */; };
 		224274B41913C17600B505C0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274B31913C17600B505C0 /* XCTest.framework */; };
 		224274B51913C17600B505C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274941913C17600B505C0 /* Foundation.framework */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2210C8011915015C00816EF1 /* LogIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogIn.h; sourceTree = "<group>"; };
+		2210C8021915015C00816EF1 /* LogIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogIn.m; sourceTree = "<group>"; };
 		222458E51913CFB600CBBB9C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		222458E61913CFB600CBBB9C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		224274911913C17600B505C0 /* VocApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,8 +62,8 @@
 		224274A31913C17600B505C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		224274A41913C17600B505C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		224274A71913C17600B505C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		224274A91913C17600B505C0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		224274AA1913C17600B505C0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		224274A91913C17600B505C0 /*  LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = " LoginViewController.h"; sourceTree = "<group>"; };
+		224274AA1913C17600B505C0 /*  LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = " LoginViewController.m"; sourceTree = "<group>"; };
 		224274AC1913C17600B505C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		224274B21913C17600B505C0 /* VocAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VocAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		224274B31913C17600B505C0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -161,14 +164,16 @@
 				224274A31913C17600B505C0 /* AppDelegate.h */,
 				224274A41913C17600B505C0 /* AppDelegate.m */,
 				224274A61913C17600B505C0 /* Main.storyboard */,
-				224274A91913C17600B505C0 /* ViewController.h */,
-				224274AA1913C17600B505C0 /* ViewController.m */,
+				224274A91913C17600B505C0 /*  LoginViewController.h */,
+				224274AA1913C17600B505C0 /*  LoginViewController.m */,
 				224274AC1913C17600B505C0 /* Images.xcassets */,
 				2242749B1913C17600B505C0 /* Supporting Files */,
 				224274C91913C3DF00B505C0 /* NewUserViewController.h */,
 				224274CA1913C3DF00B505C0 /* NewUserViewController.m */,
 				222458E51913CFB600CBBB9C /* User.h */,
 				222458E61913CFB600CBBB9C /* User.m */,
+				2210C8011915015C00816EF1 /* LogIn.h */,
+				2210C8021915015C00816EF1 /* LogIn.m */,
 			);
 			path = VocApp;
 			sourceTree = "<group>";
@@ -300,8 +305,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				222458E71913CFB600CBBB9C /* User.m in Sources */,
-				224274AB1913C17600B505C0 /* ViewController.m in Sources */,
+				224274AB1913C17600B505C0 /*  LoginViewController.m in Sources */,
 				224274A51913C17600B505C0 /* AppDelegate.m in Sources */,
+				2210C8031915015C00816EF1 /* LogIn.m in Sources */,
 				224274CB1913C3DF00B505C0 /* NewUserViewController.m in Sources */,
 				224274A11913C17600B505C0 /* main.m in Sources */,
 			);

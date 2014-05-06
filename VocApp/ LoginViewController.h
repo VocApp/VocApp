@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface ViewController : UIViewController
+@interface  LoginViewController : UIViewController
+
+- (void)handleUserLogin:(PFUser *)user error:(NSError *)error;
 
 @end

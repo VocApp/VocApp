@@ -15,9 +15,11 @@
 @property (strong,nonatomic) NSString* mail;
 @property (strong,nonatomic) NSString* password;
 
+
 -(BOOL)isComplete;
 
 
 -(void)signUp;
+
 
 @end
