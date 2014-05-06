@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface  LoginViewController : UIViewController
+@interface  ViewController : UIViewController
 
 - (void)handleUserLogin:(PFUser *)user error:(NSError *)error;
 

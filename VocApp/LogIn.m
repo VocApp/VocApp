@@ -8,6 +8,7 @@
 
 #import "LogIn.h"
 #import <Parse/Parse.h>
+#import "ViewController.h"
 
 @implementation LogIn
 
@@ -21,28 +22,20 @@
     }
 }
 
--(void)LogIn:(NSString*) user andPw:(NSString *)pwd{
+-(void)LogIn:(NSString*) user andPw:(NSString *)pwd andView:(ViewController*)view {
     NSLog(@"USER %@",user);
     NSLog(@"PWD %@",pwd);
     
+    
+    
     [PFUser logInWithUsernameInBackground:user
                                  password:pwd
-                                   target:self
+                                   target:view
                                  selector:@selector(handleUserLogin:error:)];
    
     
 }
 
--(v)[PFUser logInWithUsernameInBackground:user password:pwd
-                                block:^(PFUser *user, NSError *error) {
-                                    if (user) {
-                                        // Do stuff after successful login.
-                                        NSLog(@"Hooray Sign Up läuft");
-                                    } else {
-                                        // The login failed. Check error to see why.
-                                        
-                                    }
-                                }];
 
 
 

@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 VocApp. All rights reserved.
 //
 
-#import " LoginViewController.h"
+#import "ViewController.h"
 #import <Parse/Parse.h>
 #import "LogIn.h"
 #import "User.h"
 
-@interface LoginViewController ()
+@interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *passwort;
 
 @end
 
-@implementation  LoginViewController
+@implementation  ViewController
 
 - (void)viewDidLoad
 {
@@ -49,7 +49,7 @@
     LogIn *log=[LogIn new];
    
     
-     [log  LogIn:_username.text andPw:_passwort.text];
+     [log  LogIn:_username.text andPw:_passwort.text andView:self];
     
    }
 
