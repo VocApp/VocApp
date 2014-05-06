@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2210C8031915015C00816EF1 /* LogIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210C8021915015C00816EF1 /* LogIn.m */; };
 		222458E71913CFB600CBBB9C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 222458E61913CFB600CBBB9C /* User.m */; };
+		222D9C921918D85800FAE989 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222D9C911918D85800FAE989 /* HomeViewController.m */; };
 		224274951913C17600B505C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274941913C17600B505C0 /* Foundation.framework */; };
 		224274971913C17600B505C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274961913C17600B505C0 /* CoreGraphics.framework */; };
 		224274991913C17600B505C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274981913C17600B505C0 /* UIKit.framework */; };
@@ -34,6 +35,7 @@
 		224274DB1913C66800B505C0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274DA1913C66800B505C0 /* Security.framework */; };
 		224274DD1913C67A00B505C0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274DC1913C67A00B505C0 /* StoreKit.framework */; };
 		224274DF1913C69800B505C0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274DE1913C69800B505C0 /* SystemConfiguration.framework */; };
+		227EBCFB1918DC7100546360 /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EBCFA1918DC7100546360 /* testViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		2210C8021915015C00816EF1 /* LogIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogIn.m; sourceTree = "<group>"; };
 		222458E51913CFB600CBBB9C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		222458E61913CFB600CBBB9C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		222D9C901918D85800FAE989 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		222D9C911918D85800FAE989 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		224274911913C17600B505C0 /* VocApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224274941913C17600B505C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		224274961913C17600B505C0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,6 +86,8 @@
 		224274DA1913C66800B505C0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		224274DC1913C67A00B505C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		224274DE1913C69800B505C0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		227EBCF91918DC7100546360 /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		227EBCFA1918DC7100546360 /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,8 @@
 				222458E61913CFB600CBBB9C /* User.m */,
 				2210C8011915015C00816EF1 /* LogIn.h */,
 				2210C8021915015C00816EF1 /* LogIn.m */,
+				222D9C901918D85800FAE989 /* HomeViewController.h */,
+				222D9C911918D85800FAE989 /* HomeViewController.m */,
 			);
 			path = VocApp;
 			sourceTree = "<group>";
@@ -185,6 +193,8 @@
 				2242749D1913C17600B505C0 /* InfoPlist.strings */,
 				224274A01913C17600B505C0 /* main.m */,
 				224274A21913C17600B505C0 /* VocApp-Prefix.pch */,
+				227EBCF91918DC7100546360 /* testViewController.h */,
+				227EBCFA1918DC7100546360 /* testViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -309,6 +319,8 @@
 				224274A51913C17600B505C0 /* AppDelegate.m in Sources */,
 				2210C8031915015C00816EF1 /* LogIn.m in Sources */,
 				224274CB1913C3DF00B505C0 /* NewUserViewController.m in Sources */,
+				222D9C921918D85800FAE989 /* HomeViewController.m in Sources */,
+				227EBCFB1918DC7100546360 /* testViewController.m in Sources */,
 				224274A11913C17600B505C0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

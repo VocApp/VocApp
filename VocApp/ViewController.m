@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "LogIn.h"
 #import "User.h"
+#import "HomeViewController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
@@ -50,7 +51,7 @@
    
     
      [log  LogIn:_username.text andPw:_passwort.text andView:self];
-    
+
    }
 
 - (void)handleUserLogin:(PFUser *)user error:(NSError *)error {
@@ -58,6 +59,8 @@
     if (user) {
         // Do stuff after successful login.
         NSLog(@"Yippie");
+       [self performSegueWithIdentifier:@"NewView" sender:self];
+        
     } else {
         // The login failed. Check error to see why.
     }
