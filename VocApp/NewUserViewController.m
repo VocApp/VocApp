@@ -67,8 +67,12 @@
     }
     
 }
+- (IBAction)tapped:(id)sender {
+    [self.view endEditing:YES];
+}
+
 - (IBAction)CancelPressed:(id)sender {
-    self.view.hidden=YES ;
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

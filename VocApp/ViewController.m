@@ -33,6 +33,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)tapped:(id)sender {
+    [self.view endEditing:YES];
+}
 - (IBAction)okPressed:(id)sender {
     
     _username.backgroundColor=[UIColor clearColor];
