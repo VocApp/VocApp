@@ -25,7 +25,7 @@
 }
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
-    return 32;
+    return 5;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
@@ -36,6 +36,7 @@
     
     // make the cell's title the actual NSIndexPath value
     cell.label.text = [NSString stringWithFormat:@"{%ld,%ld}", (long)indexPath.row, (long)indexPath.section];
+    cell.label.backgroundColor =[UIColor colorWithRed:0 green:0 blue:1 alpha:0.5];
     
 
     

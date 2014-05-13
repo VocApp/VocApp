@@ -41,11 +41,11 @@
     _username.backgroundColor=[UIColor clearColor];
     _passwort.backgroundColor=[UIColor clearColor];
     if([_username.text isEqualToString:@""]){
-        _username.backgroundColor=[UIColor redColor];
+        _username.backgroundColor=[UIColor colorWithRed:1 green:0 blue:0 alpha:0.25];
         _username.placeholder=@"Username angeben";
     }
     if([_passwort.text isEqualToString:@""]){
-        _passwort.backgroundColor=[UIColor redColor];
+        _passwort.backgroundColor=[UIColor colorWithRed:1 green:0 blue:0 alpha:0.25];
         _passwort.placeholder=@"Passwort angeben";
         
     }
@@ -66,6 +66,18 @@
         
     } else {
         // The login failed. Check error to see why.
+        UIAlertView *alert= [[UIAlertView alloc] initWithTitle:@"Fehler"
+                                                       message:@"Username oder Passwort falsch"
+                                                      delegate:nil
+                                             cancelButtonTitle:nil
+                                             otherButtonTitles:@"ok", nil];
+        
+        
+        [alert show];
+
+        
+        
+        
     }
 }
 

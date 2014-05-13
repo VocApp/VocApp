@@ -23,37 +23,37 @@
 - (IBAction)okPressed:(id)sender {
     User *user =[User new];
     if([_vorname.text isEqualToString:@""]){
-        _vorname.backgroundColor= [UIColor redColor];
+        _vorname.backgroundColor= [UIColor colorWithRed:1 green:0 blue:0 alpha:0.25];
         _vorname.placeholder=@"Bitte Vorname angeben";
         NSLog(@"Vorname fehlt");
     }else{
         user.forename=_vorname.text;
     }
     if([_nachname.text isEqualToString:@""]){
-        _nachname.backgroundColor=[UIColor redColor];
+        _nachname.backgroundColor=[UIColor colorWithRed:1 green:0 blue:0 alpha:0.25];
         _nachname.placeholder=@"Bitte Nachname angeben";
         NSLog(@"Nachname fehlt");
     }else{
         user.surname=_nachname.text;
     }
     if([_username.text isEqualToString:@""]){
-        _username.backgroundColor=[UIColor redColor];
+        _username.backgroundColor=[UIColor colorWithRed:1 green:0 blue:0 alpha:0.25];
         _username.placeholder=@"Bitte Username angeben";
         NSLog(@"username fehlt");
     }else{
         user.username=_username.text;
     }
     if([_email.text isEqualToString:@""]){
-        _email.backgroundColor=[UIColor blueColor];
+        _email.backgroundColor=[UIColor colorWithRed:1 green:0 blue:0 alpha:0.25];
         _email.placeholder=@"Bitte E-Mail-Adresse angeben";
     }else{
         user.mail=_email.text;
     }
     if((![_passwort.text isEqualToString: _passwortwdh.text])||([_passwort.text isEqualToString:@""] )){
-        _passwortwdh.backgroundColor=[UIColor redColor];
+        _passwortwdh.backgroundColor=[UIColor colorWithRed:1 green:0 blue:0 alpha:0.25];
         _passwortwdh.placeholder=@"Passwort muss übereinstimmen";
         _passwort.placeholder=@"Passwort muss übereinstimmen";
-        _passwort.backgroundColor=[UIColor redColor];
+        _passwort.backgroundColor=[UIColor colorWithRed:1 green:0 blue:0 alpha:0.25];
     }else{
         user.password=_passwort.text;
     }
