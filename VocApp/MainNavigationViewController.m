@@ -1,19 +1,19 @@
 //
-//  HomeViewController.m
+//  MainNavigationViewController.m
 //  VocApp
 //
-//  Created by Tim Härle on 06.05.14.
+//  Created by Tim Härle on 14.05.14.
 //  Copyright (c) 2014 VocApp. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "MainNavigationViewController.h"
 #import <Parse/Parse.h>
 
-@interface HomeViewController ()
+@interface MainNavigationViewController ()
 
 @end
 
-@implementation HomeViewController
+@implementation MainNavigationViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,8 +26,8 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
-    self.navigationItem.title=[PFUser currentUser].username;
     // Do any additional setup after loading the view.
 }
 
@@ -36,7 +36,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 /*
 #pragma mark - Navigation

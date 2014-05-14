@@ -12,15 +12,15 @@
 
 @implementation LogIn
 
--(BOOL)userComplete:(NSString*) user andPw:(NSString *)pwd;{
-    NSLog(@"userUser %@",user);
-    NSLog(@"userPWD %@",pwd);
-    if(user&&pwd){
-        return YES;
-    }else{
-        return NO;
-    }
-}
+//-(BOOL)userComplete:(NSString*) user andPw:(NSString *)pwd;{
+//    NSLog(@"userUser %@",user);
+//    NSLog(@"userPWD %@",pwd);
+//    if(user&&pwd){
+//        return YES;
+//    }else{
+//        return NO;
+//    }
+//}
 
 -(void)LogIn:(NSString*) user andPw:(NSString *)pwd andView:(ViewController*)view {
     NSLog(@"USER %@",user);

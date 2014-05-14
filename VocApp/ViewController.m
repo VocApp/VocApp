@@ -22,7 +22,12 @@
 
 - (void)viewDidLoad
 {
+    if ([PFUser currentUser]) {
+    [self performSegueWithIdentifier:@"NewView" sender:self];
+    }
+
     [super viewDidLoad];
+//       self.navigationItem.title=[PFUser currentUser].username;
 	// Do any additional setup after loading the view, typically from a nib.
     
     
@@ -62,6 +67,11 @@
     if (user) {
         // Do stuff after successful login.
         NSLog(@"Yippie");
+        PFUser *currentUser = [PFUser currentUser];
+//        [currentUser addObject:@"gut" forKey:@"lections"];
+//        [currentUser saveInBackground];
+        NSMutableArray *lections=currentUser[@"lections"];
+        NSLog(@"%@",lections);
        [self performSegueWithIdentifier:@"NewView" sender:self];
         
     } else {
@@ -80,5 +90,17 @@
         
     }
 }
+
+- (IBAction)LogoutPressed:(id)sender {
+    NSLog(@"Logout angefordert");
+    [PFUser logOut];
+//    PFUser *currentUser = [PFUser currentUser];
+    
+    
+}
+- (IBAction)logout:(id)sender {
+    NSLog(@"Logout angefordert");
+}
+
 
 @end

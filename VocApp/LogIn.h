@@ -12,7 +12,7 @@
 @interface LogIn : NSObject
 @property (strong,nonatomic) NSString* user;
 @property (strong,nonatomic) NSString* pwd;
--(BOOL)userComplete:(NSString*) user andPw:(NSString *)pwd;
+//-(BOOL)userComplete:(NSString*) user andPw:(NSString *)pwd;
 -(void)LogIn:(NSString*) user andPw:(NSString *)pwd andView:(ViewController*)view;
 
 

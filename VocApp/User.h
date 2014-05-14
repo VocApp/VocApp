@@ -14,6 +14,7 @@
 @property (strong,nonatomic) NSString* username;
 @property (strong,nonatomic) NSString* mail;
 @property (strong,nonatomic) NSString* password;
+@property (strong,nonatomic) NSMutableArray * lections;
 
 
 -(BOOL)isComplete;
