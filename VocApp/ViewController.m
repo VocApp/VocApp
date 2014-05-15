@@ -22,8 +22,9 @@
 
 - (void)viewDidLoad
 {
+    
     if ([PFUser currentUser]) {
-    [self performSegueWithIdentifier:@"NewView" sender:self];
+        [self performSegueWithIdentifier:@"NewView" sender:self];
     }
 
     [super viewDidLoad];

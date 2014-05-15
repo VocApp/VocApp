@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Lection : NSObject
-@property (strong,nonatomic) NSArray * entries;
+@property (strong,nonatomic) NSMutableArray * entries;
 @property (strong,nonatomic) NSString * name;
 @property (strong,nonatomic) PFUser * author;
 
+
+-(void) addEntryWithOrigninal:org andTranslation:tran;
 @end

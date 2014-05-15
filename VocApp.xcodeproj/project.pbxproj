@@ -39,6 +39,7 @@
 		228B457B1922241A002D403D /* cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B457A1922241A002D403D /* cell.m */; };
 		2291DD9719239D200010B2BE /* Lection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291DD9619239D200010B2BE /* Lection.m */; };
 		2291DD9A1923A6D50010B2BE /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291DD991923A6D50010B2BE /* MainNavigationViewController.m */; };
+		22B5F0601924E8520047477B /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5F05F1924E8520047477B /* EditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		2291DD9619239D200010B2BE /* Lection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lection.m; sourceTree = "<group>"; };
 		2291DD981923A6D50010B2BE /* MainNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationViewController.h; sourceTree = "<group>"; };
 		2291DD991923A6D50010B2BE /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
+		22B5F05E1924E8520047477B /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		22B5F05F1924E8520047477B /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +181,6 @@
 			children = (
 				228B457819220F91002D403D /* Model */,
 				228B457719220F6B002D403D /* Controller */,
-				224274A61913C17600B505C0 /* Main.storyboard */,
 				224274A01913C17600B505C0 /* main.m */,
 				224274AC1913C17600B505C0 /* Images.xcassets */,
 				2242749B1913C17600B505C0 /* Supporting Files */,
@@ -231,6 +233,9 @@
 				228B457A1922241A002D403D /* cell.m */,
 				2291DD981923A6D50010B2BE /* MainNavigationViewController.h */,
 				2291DD991923A6D50010B2BE /* MainNavigationViewController.m */,
+				22B5F05E1924E8520047477B /* EditViewController.h */,
+				22B5F05F1924E8520047477B /* EditViewController.m */,
+				224274A61913C17600B505C0 /* Main.storyboard */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				222458E71913CFB600CBBB9C /* User.m in Sources */,
 				228B457B1922241A002D403D /* cell.m in Sources */,
 				224274AB1913C17600B505C0 /* ViewController.m in Sources */,
+				22B5F0601924E8520047477B /* EditViewController.m in Sources */,
 				224274A51913C17600B505C0 /* AppDelegate.m in Sources */,
 				2291DD9719239D200010B2BE /* Lection.m in Sources */,
 				2210C8031915015C00816EF1 /* LogIn.m in Sources */,
