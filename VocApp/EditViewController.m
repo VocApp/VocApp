@@ -43,6 +43,12 @@
      [self.view endEditing:YES];
 }
 
+//- (void)textFieldDidEndEditing:(UITextField *)textField{
+//    
+//    NSLog(@"Delegate");
+//}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

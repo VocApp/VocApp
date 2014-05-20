@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9FD-LF-ALq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9FD-LF-ALq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -304,6 +304,9 @@
                     <tabBarItem key="tabBarItem" title="Item 2" id="GMJ-r3-hyi"/>
                     <connections>
                         <outlet property="tableView" destination="pN6-eM-WMk" id="iVd-DR-jYq"/>
+                        <outlet property="textField1" destination="wm2-aW-cYn" id="0T2-sM-fpf"/>
+                        <outlet property="textField2" destination="Tbm-cn-apY" id="pK6-SM-bCb"/>
+                        <outlet property="textfieldOne" destination="wm2-aW-cYn" id="TBK-eS-aDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBX-dL-gfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
