@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *original;
 @property (weak, nonatomic) IBOutlet UITextField *translation;
 @property (strong,nonatomic)Lection *lection;
+
+-(void)clearTextfield;
 @end
