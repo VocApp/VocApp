@@ -10,4 +10,6 @@
 
 @interface CollectionViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate>
 
+- (void) loadComplete:(NSArray *)objects error:(NSError *)error;
+
 @end

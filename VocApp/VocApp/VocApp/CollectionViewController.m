@@ -8,9 +8,14 @@
 
 #import "CollectionViewController.h"
 #import "cell.h"
+#import "AllLections.h"
+#import "Lection.h"
+#import <Parse/Parse.h>
 
 @interface CollectionViewController ()
-
+@property NSLock *lock;
+@property NSArray *lections;
+@property UICollectionView* Collectionview;
 @end
 
 @implementation CollectionViewController 
@@ -24,8 +29,21 @@
     return self;
 }
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
-{
-    return 5;
+{   //[_lock lock];
+    _Collectionview=view;
+    
+    //[_lock lock];
+    NSLog(@"%d",_lections.count);
+    return _lections.count;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"selected");
+    [self performSegueWithIdentifier:@"detail" sender:self];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"deselected");
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
@@ -35,8 +53,10 @@
     cell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"ID" forIndexPath:indexPath];
     
     // make the cell's title the actual NSIndexPath value
-    cell.label.text = [NSString stringWithFormat:@"{%ld,%ld}", (long)indexPath.row, (long)indexPath.section];
-    cell.label.backgroundColor =[UIColor colorWithRed:0 green:0 blue:1 alpha:0.5];
+   
+    PFObject *lec =(PFObject*) _lections[indexPath.row] ;
+    cell.label.text =lec[@"name"];
+    
     
 
     
@@ -47,12 +67,18 @@
     return 1;
 }
 
-
+- (void) loadComplete:(NSArray *)objects error:(NSError *)error {
+    _lections=objects;
+    [_Collectionview reloadData];
+    
+    NSLog(@"%d",objects.count);
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [AllLections loadLections:self];
 }
 
 - (void)didReceiveMemoryWarning
