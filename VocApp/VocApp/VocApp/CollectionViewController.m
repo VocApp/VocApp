@@ -11,6 +11,7 @@
 #import "AllLections.h"
 #import "Lection.h"
 #import <Parse/Parse.h>
+#import "MainNavigationViewController.h"
 
 @interface CollectionViewController ()
 @property NSLock *lock;
@@ -20,11 +21,18 @@
 
 @implementation CollectionViewController 
 
+-(IBAction)back:(id)sender{
+    NSLog(@"back");
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(back:)];
+        
+        self.navigationItem.hidesBackButton = YES;
+        self.navigationItem.rightBarButtonItem = item;
+        //[item release];
     }
     return self;
 }
@@ -70,7 +78,7 @@
 - (void) loadComplete:(NSArray *)objects error:(NSError *)error {
     _lections=objects;
     [_Collectionview reloadData];
-    
+   
     NSLog(@"%d",objects.count);
 }
 
@@ -79,6 +87,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [AllLections loadLections:self];
+   // NSLog(@"nav:%hhd", [self.navigationController isMemberOfClass:[MainNavigationViewController class ]]);
 }
 
 - (void)didReceiveMemoryWarning
