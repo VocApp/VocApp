@@ -16,7 +16,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *translation;
 @property  int actualWordIndex;
 @property  int  maxWordIndex;
+@property float actualWordIndexFloat,maxWordIndexFloat;
 @property BOOL inCorrectMode;
+
 
 @end
 
@@ -35,6 +37,10 @@
 
     if (_actualWordIndex==(_maxWordIndex)) {
         
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Lektion beendet" message:@"Lektion abgeschlossen" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil ];
+        [alert show];
+        
+//        [self.navigationController popToRootViewControllerAnimated:YES];
         return NO;
     }
     return YES;
@@ -55,7 +61,8 @@
                     
                     _inCorrectMode=NO;
                     self.actualWordIndex++;
-                    self.progress.progress=self.actualWordIndex/self.maxWordIndex;
+                    _actualWordIndexFloat++;
+                    [self.progress setProgress:((self.actualWordIndexFloat)/self.maxWordIndexFloat) animated:YES];
                 }else{
                     
                     self.VocappView.backgroundColor=[UIColor    colorWithRed:1.0f green:0.0 blue:0 alpha:0.25];
@@ -64,7 +71,10 @@
                         self.progress.progress=self.actualWordIndex/self.maxWordIndex;
                     self.correction.text=_array[_actualWordIndex][1];
                     self.actualWordIndex++;
-                    self.progress.progress=self.actualWordIndex/self.maxWordIndex;
+                    _actualWordIndexFloat++;
+                    float prog=((self.actualWordIndexFloat)/self.maxWordIndexFloat);
+                    NSLog(@"progress: %f",prog);
+                    [self.progress setProgress: prog animated:YES];
                 }
             break;
             case NO:
@@ -89,7 +99,9 @@
     _original.text=_array[0][0];
     self.correction.text=@"";
     _maxWordIndex=_array.count;
+    _maxWordIndexFloat=_array.count;
     _actualWordIndex=0;
+    _actualWordIndexFloat=0.0;
    _inCorrectMode=YES;
    
 }

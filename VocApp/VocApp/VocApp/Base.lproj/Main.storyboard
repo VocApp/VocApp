@@ -33,7 +33,7 @@
                                 <rect key="frame" x="75" y="168" width="170" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-wl-Ev9">
                                 <rect key="frame" x="75" y="206" width="51" height="30"/>
@@ -81,7 +81,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="148" y="-1264"/>
+            <point key="canvasLocation" x="456" y="-936"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bow-1T-jDX">
@@ -96,7 +96,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ULq-IC-dRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-381" y="-1264"/>
+            <point key="canvasLocation" x="-73" y="-936"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="gEm-en-rbT">
@@ -118,7 +118,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="em0-x9-0qW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="-1277"/>
+            <point key="canvasLocation" x="1256" y="-949"/>
         </scene>
         <!--Collection View Controller - Titel-->
         <scene sceneID="2lK-RV-luV">
@@ -156,7 +156,7 @@
                                 <size key="customSize" width="101" height="101"/>
                                 <connections>
                                     <outlet property="label" destination="Kl1-t7-ewU" id="RNJ-qk-KAd"/>
-                                    <segue destination="dWG-ug-sMB" kind="push" id="zol-qF-FUd"/>
+                                    <segue destination="dWG-ug-sMB" kind="push" identifier="detail" id="zol-qF-FUd"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -190,7 +190,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooC-Mv-G3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2220" y="-1277"/>
+            <point key="canvasLocation" x="2528" y="-949"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Mmb-if-JlE">
@@ -232,6 +232,9 @@
                                 <color key="backgroundColor" red="0.0" green="0.60062518379999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rlS-xS-MEV" appends="YES" id="cH8-pN-mxO"/>
+                                </connections>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITv-p1-qSc">
                                 <rect key="frame" x="-2" y="82" width="171" height="21"/>
@@ -257,8 +260,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="848-IS-Lst" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="rlS-xS-MEV">
+                    <connections>
+                        <action selector="swipeToCorrect:" destination="dWG-ug-sMB" id="h5F-sQ-fiL"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2808" y="-1277"/>
+            <point key="canvasLocation" x="3004" y="-961"/>
         </scene>
         <!--Navigation Controller - Meine Lektionen-->
         <scene sceneID="SVd-Pd-4uX">
@@ -274,7 +282,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bU2-ig-bNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672" y="-1277"/>
+            <point key="canvasLocation" x="1980" y="-949"/>
         </scene>
         <!--Edit View Controller - Erstellen-->
         <scene sceneID="JRS-d8-h9e">
@@ -349,7 +357,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1672" y="-472"/>
+            <point key="canvasLocation" x="1980" y="-144"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="3VC-ZQ-pg6">
@@ -448,7 +456,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="142" y="-596"/>
+            <point key="canvasLocation" x="450" y="-268"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

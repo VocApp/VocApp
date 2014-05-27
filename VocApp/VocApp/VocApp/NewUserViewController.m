@@ -64,11 +64,13 @@
         NSLog(@"%@", user.surname);
         [user signUp];
         NSLog(@"complete");
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     }
     
 }
 - (IBAction)tapped:(id)sender {
     [self.view endEditing:YES];
+    
 }
 
 - (IBAction)CancelPressed:(id)sender {

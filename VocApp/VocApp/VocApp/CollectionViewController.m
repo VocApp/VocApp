@@ -44,6 +44,7 @@
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *obj=[story instantiateViewControllerWithIdentifier:@"login"];
     self.navigationController.navigationBarHidden=YES;
+    [self.tabBarController.tabBar setHidden:YES];
     [self.navigationController pushViewController:obj animated:YES];
 }
 
