@@ -38,9 +38,10 @@
 		228B457619220F11002D403D /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B457519220F11002D403D /* CollectionViewController.m */; };
 		228B457B1922241A002D403D /* cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B457A1922241A002D403D /* cell.m */; };
 		2291DD9719239D200010B2BE /* Lection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291DD9619239D200010B2BE /* Lection.m */; };
-		2291DD9A1923A6D50010B2BE /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291DD991923A6D50010B2BE /* MainNavigationViewController.m */; };
 		2294237C192F6AD9002AF98C /* AllLections.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294237B192F6AD9002AF98C /* AllLections.m */; };
+		22AFF5FE193480600060FD2F /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFF5FD193480600060FD2F /* TabViewController.m */; };
 		22B5F0601924E8520047477B /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5F05F1924E8520047477B /* EditViewController.m */; };
+		22ECD9861930BE0A00ACCD3A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ECD9851930BE0A00ACCD3A /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,12 +98,14 @@
 		228B457A1922241A002D403D /* cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cell.m; sourceTree = "<group>"; };
 		2291DD9519239D200010B2BE /* Lection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lection.h; sourceTree = "<group>"; };
 		2291DD9619239D200010B2BE /* Lection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lection.m; sourceTree = "<group>"; };
-		2291DD981923A6D50010B2BE /* MainNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationViewController.h; sourceTree = "<group>"; };
-		2291DD991923A6D50010B2BE /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		2294237A192F6AD9002AF98C /* AllLections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLections.h; sourceTree = "<group>"; };
 		2294237B192F6AD9002AF98C /* AllLections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLections.m; sourceTree = "<group>"; };
+		22AFF5FC193480600060FD2F /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
+		22AFF5FD193480600060FD2F /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 		22B5F05E1924E8520047477B /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		22B5F05F1924E8520047477B /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		22ECD9841930BE0A00ACCD3A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		22ECD9851930BE0A00ACCD3A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,11 +237,13 @@
 				228B457519220F11002D403D /* CollectionViewController.m */,
 				228B45791922241A002D403D /* cell.h */,
 				228B457A1922241A002D403D /* cell.m */,
-				2291DD981923A6D50010B2BE /* MainNavigationViewController.h */,
-				2291DD991923A6D50010B2BE /* MainNavigationViewController.m */,
 				22B5F05E1924E8520047477B /* EditViewController.h */,
 				22B5F05F1924E8520047477B /* EditViewController.m */,
 				224274A61913C17600B505C0 /* Main.storyboard */,
+				22ECD9841930BE0A00ACCD3A /* DetailViewController.h */,
+				22ECD9851930BE0A00ACCD3A /* DetailViewController.m */,
+				22AFF5FC193480600060FD2F /* TabViewController.h */,
+				22AFF5FD193480600060FD2F /* TabViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -355,7 +360,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2291DD9A1923A6D50010B2BE /* MainNavigationViewController.m in Sources */,
 				222458E71913CFB600CBBB9C /* User.m in Sources */,
 				2294237C192F6AD9002AF98C /* AllLections.m in Sources */,
 				228B457B1922241A002D403D /* cell.m in Sources */,
@@ -364,10 +368,12 @@
 				224274A51913C17600B505C0 /* AppDelegate.m in Sources */,
 				2291DD9719239D200010B2BE /* Lection.m in Sources */,
 				2210C8031915015C00816EF1 /* LogIn.m in Sources */,
+				22AFF5FE193480600060FD2F /* TabViewController.m in Sources */,
 				224274CB1913C3DF00B505C0 /* NewUserViewController.m in Sources */,
 				222D9C921918D85800FAE989 /* HomeViewController.m in Sources */,
 				224274A11913C17600B505C0 /* main.m in Sources */,
 				228B457619220F11002D403D /* CollectionViewController.m in Sources */,
+				22ECD9861930BE0A00ACCD3A /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,8 @@
 #import "AllLections.h"
 #import "Lection.h"
 #import <Parse/Parse.h>
-#import "MainNavigationViewController.h"
+#import "ViewController.h"
+
 
 @interface CollectionViewController ()
 @property NSLock *lock;
@@ -44,15 +45,19 @@
     NSLog(@"%d",_lections.count);
     return _lections.count;
 }
+- (IBAction)Logout:(id)sender {
+    [PFUser logOut];
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *obj=[story instantiateViewControllerWithIdentifier:@"login"];
+    self.navigationController.navigationBarHidden=YES;
+    [self.navigationController pushViewController:obj animated:YES];
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"selected");
-    [self performSegueWithIdentifier:@"detail" sender:self];
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"deselected");
-}
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
@@ -64,9 +69,7 @@
    
     PFObject *lec =(PFObject*) _lections[indexPath.row] ;
     cell.label.text =lec[@"name"];
-    
-    
-
+    [cell.layer setCornerRadius:50.0f ];
     
     return cell;
 }
@@ -87,8 +90,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [AllLections loadLections:self];
+    self.navigationItem.title=[PFUser currentUser].username;
    // NSLog(@"nav:%hhd", [self.navigationController isMemberOfClass:[MainNavigationViewController class ]]);
-}
+
+   
+    }
 
 - (void)didReceiveMemoryWarning
 {

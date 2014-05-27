@@ -10,6 +10,7 @@
 #import "Lection.h"
 
 @interface EditViewController ()
+@property (weak, nonatomic) IBOutlet UINavigationItem *title;
 
 @end
 
@@ -29,6 +30,10 @@
     _translation.backgroundColor=[UIColor colorWithRed:0 green:1 blue:0 alpha:0.25];
     [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(clearTextfield) userInfo:nil repeats:NO];
     
+    
+}
+- (IBAction)Logout:(id)sender {
+    [PFUser logOut];
     
 }
 - (IBAction)finishEditting:(id)sender {
@@ -54,6 +59,7 @@
 {
     [super viewDidLoad];
     
+    //_title=[PFUser currentUser].username;
     // Do any additional setup after loading the view.
 }
 

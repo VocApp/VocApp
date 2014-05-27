@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "TabViewController.h"
+#include "ViewController.h"
 
 @implementation AppDelegate
 
@@ -19,7 +21,7 @@
     [Parse setApplicationId:@"HopDXnSqQda8dka0pd7Yj2zMbnuxSAk8zCpDvLmB"
                   clientKey:@"KOz78ut0Ng5sO5mSXaNyFsGuZvkwftxtFyqhSs0Y"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    return YES;
+      return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -48,5 +50,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end

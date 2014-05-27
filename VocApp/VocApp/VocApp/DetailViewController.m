@@ -1,19 +1,20 @@
 //
-//  MainNavigationViewController.m
+//  DetailViewController.m
 //  VocApp
 //
-//  Created by Tim Härle on 14.05.14.
+//  Created by Tim Härle on 24.05.14.
 //  Copyright (c) 2014 VocApp. All rights reserved.
 //
 
-#import "MainNavigationViewController.h"
-#import <Parse/Parse.h>
+#import "DetailViewController.h"
+#import "AllLections.h"
+#import "Lection.h"
 
-@interface MainNavigationViewController ()
+@interface DetailViewController ()
 
 @end
 
-@implementation MainNavigationViewController
+@implementation DetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,9 +25,12 @@
     return self;
 }
 
+-(void)getWords{
+    
+}
+
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

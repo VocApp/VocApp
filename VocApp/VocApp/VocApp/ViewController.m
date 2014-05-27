@@ -11,6 +11,9 @@
 #import "LogIn.h"
 #import "User.h"
 #import "HomeViewController.h"
+#import "AppDelegate.h"
+#import "TabViewController.h"
+
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
@@ -23,13 +26,18 @@
 - (void)viewDidLoad
 {
     
-    if ([PFUser currentUser]) {
-       
-    }
+   
 
     [super viewDidLoad];
-//       self.navigationItem.title=[PFUser currentUser].username;
-	// Do any additional setup after loading the view, typically from a nib.
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TabViewController *obj=[story instantiateViewControllerWithIdentifier:@"tab"];
+        self.navigationController.navigationBarHidden=YES;
+        [self.navigationController pushViewController:obj animated:YES];
+    } else {
+        // show the signup or login screen
+    }
     
     
 }
@@ -73,7 +81,14 @@
 //        [currentUser saveInBackground];
         NSMutableArray *lections=currentUser[@"lections"];
         NSLog(@"%@",lections);
-       [self performSegueWithIdentifier:@"NewView" sender:self];
+   
+       // [self dismissViewControllerAnimated:YES completion:nil] ;
+        
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TabViewController *obj=[story instantiateViewControllerWithIdentifier:@"tab"];
+        self.navigationController.navigationBarHidden=YES;
+        [self.navigationController pushViewController:obj animated:YES];
+        
         
     } else {
         // The login failed. Check error to see why.
@@ -92,16 +107,7 @@
     }
 }
 
-- (IBAction)LogoutPressed:(id)sender {
-    NSLog(@"Logout angefordert");
-    [PFUser logOut];
-//    PFUser *currentUser = [PFUser currentUser];
-    
-    
-}
-- (IBAction)logout:(id)sender {
-    NSLog(@"Logout angefordert");
-}
+
 
 
 @end
