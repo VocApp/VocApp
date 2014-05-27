@@ -10,5 +10,6 @@
 
 @interface cell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UILabel *label;
+@property  int row;
 
 @end

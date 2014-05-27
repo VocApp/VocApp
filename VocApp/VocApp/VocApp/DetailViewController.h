@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Lection.h"
+
 
 @interface DetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIProgressView *progress;
+@property (strong,nonatomic) PFObject * lection;
+@property (weak, nonatomic) IBOutlet UIView *VocappView;
+@property (weak, nonatomic) IBOutlet UILabel *correction;
 
 @end

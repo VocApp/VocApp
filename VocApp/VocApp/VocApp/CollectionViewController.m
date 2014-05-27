@@ -12,12 +12,14 @@
 #import "Lection.h"
 #import <Parse/Parse.h>
 #import "ViewController.h"
+#import "DetailViewController.h"
 
 
 @interface CollectionViewController ()
 @property NSLock *lock;
 @property NSArray *lections;
 @property UICollectionView* Collectionview;
+@property NSInteger selectedItem;
 @end
 
 @implementation CollectionViewController 
@@ -28,20 +30,12 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(back:)];
-        
-        self.navigationItem.hidesBackButton = YES;
-        self.navigationItem.rightBarButtonItem = item;
-        //[item release];
-    }
-    return self;
+        return self;
 }
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
-{   //[_lock lock];
+{
     _Collectionview=view;
     
-    //[_lock lock];
     NSLog(@"%d",_lections.count);
     return _lections.count;
 }
@@ -53,22 +47,18 @@
     [self.navigationController pushViewController:obj animated:YES];
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"selected");
-}
+
 
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    // we're going to use a custom UICollectionViewCell, which will hold an image and its label
-    //
     cell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"ID" forIndexPath:indexPath];
     
-    // make the cell's title the actual NSIndexPath value
    
     PFObject *lec =(PFObject*) _lections[indexPath.row] ;
     cell.label.text =lec[@"name"];
+    cell.row=indexPath.row;
     [cell.layer setCornerRadius:50.0f ];
     
     return cell;
@@ -108,7 +98,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    ((DetailViewController*)[segue destinationViewController]).lection=_lections[((cell*)sender).row];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

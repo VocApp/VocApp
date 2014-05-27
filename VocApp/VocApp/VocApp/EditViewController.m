@@ -10,7 +10,7 @@
 #import "Lection.h"
 
 @interface EditViewController ()
-@property (weak, nonatomic) IBOutlet UINavigationItem *title;
+
 
 @end
 
@@ -32,10 +32,7 @@
     
     
 }
-- (IBAction)Logout:(id)sender {
-    [PFUser logOut];
-    
-}
+
 - (IBAction)finishEditting:(id)sender {
     [self.lection save];
 }
@@ -52,7 +49,8 @@
 
 
 - (IBAction)tap:(id)sender {
-     [self.view endEditing:YES];
+     [self.original endEditing:YES];
+     [self.translation endEditing:YES];
 }
 
 - (void)viewDidLoad
