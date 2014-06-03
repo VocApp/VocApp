@@ -39,6 +39,10 @@
 		228B457B1922241A002D403D /* cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B457A1922241A002D403D /* cell.m */; };
 		2291DD9719239D200010B2BE /* Lection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291DD9619239D200010B2BE /* Lection.m */; };
 		2294237C192F6AD9002AF98C /* AllLections.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294237B192F6AD9002AF98C /* AllLections.m */; };
+		229E5F87193DBF9800E9129A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229E5F86193DBF9800E9129A /* SearchViewController.m */; };
+		229E5F8A193DC3C500E9129A /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229E5F89193DC3C500E9129A /* PreviewViewController.m */; };
+		22AAC8EC193DDF3600662F68 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC8EA193DDF3600662F68 /* Model.xcdatamodeld */; };
+		22AAC8EF193DE16C00662F68 /* LectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC8EE193DE16C00662F68 /* LectionData.m */; };
 		22AFF5FE193480600060FD2F /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFF5FD193480600060FD2F /* TabViewController.m */; };
 		22B5F0601924E8520047477B /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5F05F1924E8520047477B /* EditViewController.m */; };
 		22ECD9861930BE0A00ACCD3A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ECD9851930BE0A00ACCD3A /* DetailViewController.m */; };
@@ -100,6 +104,13 @@
 		2291DD9619239D200010B2BE /* Lection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lection.m; sourceTree = "<group>"; };
 		2294237A192F6AD9002AF98C /* AllLections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLections.h; sourceTree = "<group>"; };
 		2294237B192F6AD9002AF98C /* AllLections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLections.m; sourceTree = "<group>"; };
+		229E5F85193DBF9800E9129A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		229E5F86193DBF9800E9129A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		229E5F88193DC3C500E9129A /* PreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewViewController.h; sourceTree = "<group>"; };
+		229E5F89193DC3C500E9129A /* PreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewViewController.m; sourceTree = "<group>"; };
+		22AAC8EB193DDF3600662F68 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		22AAC8ED193DE16C00662F68 /* LectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectionData.h; sourceTree = "<group>"; };
+		22AAC8EE193DE16C00662F68 /* LectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectionData.m; sourceTree = "<group>"; };
 		22AFF5FC193480600060FD2F /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
 		22AFF5FD193480600060FD2F /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 		22B5F05E1924E8520047477B /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
@@ -190,6 +201,9 @@
 				224274A01913C17600B505C0 /* main.m */,
 				224274AC1913C17600B505C0 /* Images.xcassets */,
 				2242749B1913C17600B505C0 /* Supporting Files */,
+				22AAC8EA193DDF3600662F68 /* Model.xcdatamodeld */,
+				22AAC8ED193DE16C00662F68 /* LectionData.h */,
+				22AAC8EE193DE16C00662F68 /* LectionData.m */,
 			);
 			path = VocApp;
 			sourceTree = "<group>";
@@ -227,14 +241,15 @@
 		228B457719220F6B002D403D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				224274A91913C17600B505C0 /* ViewController.h */,
-				224274AA1913C17600B505C0 /* ViewController.m */,
-				224274C91913C3DF00B505C0 /* NewUserViewController.h */,
-				224274CA1913C3DF00B505C0 /* NewUserViewController.m */,
+				22AAC8F0193DF7CD00662F68 /* Login */,
 				222D9C901918D85800FAE989 /* HomeViewController.h */,
 				222D9C911918D85800FAE989 /* HomeViewController.m */,
 				228B457419220F11002D403D /* CollectionViewController.h */,
 				228B457519220F11002D403D /* CollectionViewController.m */,
+				229E5F85193DBF9800E9129A /* SearchViewController.h */,
+				229E5F86193DBF9800E9129A /* SearchViewController.m */,
+				229E5F88193DC3C500E9129A /* PreviewViewController.h */,
+				229E5F89193DC3C500E9129A /* PreviewViewController.m */,
 				228B45791922241A002D403D /* cell.h */,
 				228B457A1922241A002D403D /* cell.m */,
 				22B5F05E1924E8520047477B /* EditViewController.h */,
@@ -261,6 +276,17 @@
 				2294237B192F6AD9002AF98C /* AllLections.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		22AAC8F0193DF7CD00662F68 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				224274C91913C3DF00B505C0 /* NewUserViewController.h */,
+				224274CA1913C3DF00B505C0 /* NewUserViewController.m */,
+				224274A91913C17600B505C0 /* ViewController.h */,
+				224274AA1913C17600B505C0 /* ViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +336,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = VocApp;
 				TargetAttributes = {
+					224274901913C17600B505C0 = {
+						DevelopmentTeam = HB5T5J22X9;
+					};
 					224274B11913C17600B505C0 = {
 						TestTargetID = 224274901913C17600B505C0;
 					};
@@ -363,14 +392,18 @@
 				222458E71913CFB600CBBB9C /* User.m in Sources */,
 				2294237C192F6AD9002AF98C /* AllLections.m in Sources */,
 				228B457B1922241A002D403D /* cell.m in Sources */,
+				229E5F8A193DC3C500E9129A /* PreviewViewController.m in Sources */,
 				224274AB1913C17600B505C0 /* ViewController.m in Sources */,
 				22B5F0601924E8520047477B /* EditViewController.m in Sources */,
 				224274A51913C17600B505C0 /* AppDelegate.m in Sources */,
 				2291DD9719239D200010B2BE /* Lection.m in Sources */,
+				22AAC8EC193DDF3600662F68 /* Model.xcdatamodeld in Sources */,
+				229E5F87193DBF9800E9129A /* SearchViewController.m in Sources */,
 				2210C8031915015C00816EF1 /* LogIn.m in Sources */,
 				22AFF5FE193480600060FD2F /* TabViewController.m in Sources */,
 				224274CB1913C3DF00B505C0 /* NewUserViewController.m in Sources */,
 				222D9C921918D85800FAE989 /* HomeViewController.m in Sources */,
+				22AAC8EF193DE16C00662F68 /* LectionData.m in Sources */,
 				224274A11913C17600B505C0 /* main.m in Sources */,
 				228B457619220F11002D403D /* CollectionViewController.m in Sources */,
 				22ECD9861930BE0A00ACCD3A /* DetailViewController.m in Sources */,
@@ -498,6 +531,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -506,6 +541,7 @@
 				GCC_PREFIX_HEADER = "VocApp/VocApp-Prefix.pch";
 				INFOPLIST_FILE = "VocApp/VocApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -515,6 +551,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -523,6 +561,7 @@
 				GCC_PREFIX_HEADER = "VocApp/VocApp-Prefix.pch";
 				INFOPLIST_FILE = "VocApp/VocApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -598,6 +637,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		22AAC8EA193DDF3600662F68 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22AAC8EB193DDF3600662F68 /* Model.xcdatamodel */,
+			);
+			currentVersion = 22AAC8EB193DDF3600662F68 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 224274891913C17600B505C0 /* Project object */;
 }

@@ -1,36 +1,36 @@
 //
-//  CollectionViewController.m
+//  SearchViewController.m
 //  VocApp
 //
-//  Created by Tim Härle on 13.05.14.
+//  Created by Tim Härle on 03.06.14.
 //  Copyright (c) 2014 VocApp. All rights reserved.
 //
 
-#import "CollectionViewController.h"
-#import "cell.h"
-#import "AllLections.h"
+#import "SearchViewController.h"
 #import "Lection.h"
+#import "AllLections.h"
 #import <Parse/Parse.h>
+#import "cell.h"
 #import "ViewController.h"
-#import "DetailViewController.h"
+#import "PreviewViewController.h"
 
-
-@interface CollectionViewController ()
+@interface SearchViewController ()
 @property NSArray *lections;
 @property UICollectionView* Collectionview;
 @property NSInteger selectedItem;
 @end
 
-@implementation CollectionViewController 
+@implementation SearchViewController
 
--(IBAction)back:(id)sender{
-    NSLog(@"back");
-}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-        return self;
+    if (self) {
+        // Custom initialization
+    }
+    return self;
 }
+
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
     _Collectionview=view;
@@ -38,24 +38,13 @@
     NSLog(@"%d",_lections.count);
     return _lections.count;
 }
-- (IBAction)Logout:(id)sender {
-    [PFUser logOut];
-    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ViewController *obj=[story instantiateViewControllerWithIdentifier:@"login"];
-    self.navigationController.navigationBarHidden=YES;
-    [self.tabBarController.tabBar setHidden:YES];
-    [self.navigationController pushViewController:obj animated:YES];
-}
-
-
-
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     cell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"ID" forIndexPath:indexPath];
     
-   
+    
     PFObject *lec =(PFObject*) _lections[indexPath.row] ;
     cell.label.text =lec[@"name"];
     cell.row=indexPath.row;
@@ -71,7 +60,7 @@
 - (void) loadComplete:(NSArray *)objects error:(NSError *)error {
     _lections=objects;
     [_Collectionview reloadData];
-   
+    
     NSLog(@"%d",objects.count);
 }
 
@@ -79,14 +68,25 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [AllLections loadMyLections:self];
-    
+    [AllLections loadLections:self];
     self.navigationItem.title=[PFUser currentUser].username;
-   // NSLog(@"nav:%hhd", [self.navigationController isMemberOfClass:[MainNavigationViewController class ]]);
+    // NSLog(@"nav:%hhd", [self.navigationController isMemberOfClass:[MainNavigationViewController class ]]);
+     NSUserDefaults* userDef = [NSUserDefaults standardUserDefaults];
+    PFObject* obj =  [userDef objectForKey:@"lections"];
+    NSLog(@"%@",obj[@"name"]);
+    
+    
+}
 
-   
-    }
+- (IBAction)Logout:(id)sender {
+    [PFUser logOut];
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *obj=[story instantiateViewControllerWithIdentifier:@"login"];
+    self.navigationController.navigationBarHidden=YES;
+    [self.tabBarController.tabBar setHidden:YES];
+    [self.navigationController pushViewController:obj animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -100,7 +100,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ((DetailViewController*)[segue destinationViewController]).lection=_lections[((cell*)sender).row];
+      ((PreviewViewController*)[segue destinationViewController]).lection=_lections[((cell*)sender).row];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

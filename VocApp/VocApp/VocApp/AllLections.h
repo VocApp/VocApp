@@ -14,5 +14,7 @@
 @interface AllLections : NSObject
 
 +(void) loadLections:(CollectionViewController*)ctrl;
++(void) loadMyLections:(CollectionViewController*)ctrl;
+
 
 @end
