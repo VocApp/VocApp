@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2210C8031915015C00816EF1 /* LogIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210C8021915015C00816EF1 /* LogIn.m */; };
 		222458E71913CFB600CBBB9C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 222458E61913CFB600CBBB9C /* User.m */; };
-		222D9C921918D85800FAE989 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222D9C911918D85800FAE989 /* HomeViewController.m */; };
 		224274951913C17600B505C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274941913C17600B505C0 /* Foundation.framework */; };
 		224274971913C17600B505C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274961913C17600B505C0 /* CoreGraphics.framework */; };
 		224274991913C17600B505C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274981913C17600B505C0 /* UIKit.framework */; };
@@ -41,6 +40,11 @@
 		2294237C192F6AD9002AF98C /* AllLections.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294237B192F6AD9002AF98C /* AllLections.m */; };
 		229E5F87193DBF9800E9129A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229E5F86193DBF9800E9129A /* SearchViewController.m */; };
 		229E5F8A193DC3C500E9129A /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229E5F89193DC3C500E9129A /* PreviewViewController.m */; };
+		22A00B8619409EA9009721DB /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A00B8519409EA9009721DB /* CourseViewController.m */; };
+		22A00B891940A251009721DB /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A00B881940A251009721DB /* Course.m */; };
+		22A00B8C1940B2CC009721DB /* CourseEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A00B8B1940B2CC009721DB /* CourseEditViewController.m */; };
+		22A00B8F1940C1FB009721DB /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A00B8E1940C1FB009721DB /* TableViewCell.m */; };
+		22A00B921940D331009721DB /* AllCourses.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A00B911940D331009721DB /* AllCourses.m */; };
 		22AAC8EC193DDF3600662F68 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC8EA193DDF3600662F68 /* Model.xcdatamodeld */; };
 		22AAC8EF193DE16C00662F68 /* LectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC8EE193DE16C00662F68 /* LectionData.m */; };
 		22AFF5FE193480600060FD2F /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFF5FD193480600060FD2F /* TabViewController.m */; };
@@ -63,8 +67,6 @@
 		2210C8021915015C00816EF1 /* LogIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogIn.m; sourceTree = "<group>"; };
 		222458E51913CFB600CBBB9C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		222458E61913CFB600CBBB9C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		222D9C901918D85800FAE989 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		222D9C911918D85800FAE989 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		224274911913C17600B505C0 /* VocApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224274941913C17600B505C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		224274961913C17600B505C0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -108,6 +110,16 @@
 		229E5F86193DBF9800E9129A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		229E5F88193DC3C500E9129A /* PreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewViewController.h; sourceTree = "<group>"; };
 		229E5F89193DC3C500E9129A /* PreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewViewController.m; sourceTree = "<group>"; };
+		22A00B8419409EA9009721DB /* CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseViewController.h; sourceTree = "<group>"; };
+		22A00B8519409EA9009721DB /* CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseViewController.m; sourceTree = "<group>"; };
+		22A00B871940A251009721DB /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		22A00B881940A251009721DB /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		22A00B8A1940B2CC009721DB /* CourseEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseEditViewController.h; sourceTree = "<group>"; };
+		22A00B8B1940B2CC009721DB /* CourseEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseEditViewController.m; sourceTree = "<group>"; };
+		22A00B8D1940C1FB009721DB /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		22A00B8E1940C1FB009721DB /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		22A00B901940D331009721DB /* AllCourses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCourses.h; sourceTree = "<group>"; };
+		22A00B911940D331009721DB /* AllCourses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCourses.m; sourceTree = "<group>"; };
 		22AAC8EB193DDF3600662F68 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		22AAC8ED193DE16C00662F68 /* LectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectionData.h; sourceTree = "<group>"; };
 		22AAC8EE193DE16C00662F68 /* LectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectionData.m; sourceTree = "<group>"; };
@@ -196,14 +208,12 @@
 		2242749A1913C17600B505C0 /* VocApp */ = {
 			isa = PBXGroup;
 			children = (
+				22AAC8F2193DF92600662F68 /* DesignModel */,
 				228B457819220F91002D403D /* Model */,
 				228B457719220F6B002D403D /* Controller */,
 				224274A01913C17600B505C0 /* main.m */,
 				224274AC1913C17600B505C0 /* Images.xcassets */,
 				2242749B1913C17600B505C0 /* Supporting Files */,
-				22AAC8EA193DDF3600662F68 /* Model.xcdatamodeld */,
-				22AAC8ED193DE16C00662F68 /* LectionData.h */,
-				22AAC8EE193DE16C00662F68 /* LectionData.m */,
 			);
 			path = VocApp;
 			sourceTree = "<group>";
@@ -211,6 +221,9 @@
 		2242749B1913C17600B505C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				22AAC8EA193DDF3600662F68 /* Model.xcdatamodeld */,
+				22AAC8ED193DE16C00662F68 /* LectionData.h */,
+				22AAC8EE193DE16C00662F68 /* LectionData.m */,
 				224274A31913C17600B505C0 /* AppDelegate.h */,
 				224274A41913C17600B505C0 /* AppDelegate.m */,
 				2242749D1913C17600B505C0 /* InfoPlist.strings */,
@@ -242,23 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				22AAC8F0193DF7CD00662F68 /* Login */,
-				222D9C901918D85800FAE989 /* HomeViewController.h */,
-				222D9C911918D85800FAE989 /* HomeViewController.m */,
-				228B457419220F11002D403D /* CollectionViewController.h */,
-				228B457519220F11002D403D /* CollectionViewController.m */,
-				229E5F85193DBF9800E9129A /* SearchViewController.h */,
-				229E5F86193DBF9800E9129A /* SearchViewController.m */,
-				229E5F88193DC3C500E9129A /* PreviewViewController.h */,
-				229E5F89193DC3C500E9129A /* PreviewViewController.m */,
-				228B45791922241A002D403D /* cell.h */,
-				228B457A1922241A002D403D /* cell.m */,
-				22B5F05E1924E8520047477B /* EditViewController.h */,
-				22B5F05F1924E8520047477B /* EditViewController.m */,
+				22AAC8F1193DF8B100662F68 /* Tabbar */,
 				224274A61913C17600B505C0 /* Main.storyboard */,
-				22ECD9841930BE0A00ACCD3A /* DetailViewController.h */,
-				22ECD9851930BE0A00ACCD3A /* DetailViewController.m */,
-				22AFF5FC193480600060FD2F /* TabViewController.h */,
-				22AFF5FD193480600060FD2F /* TabViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -274,6 +272,10 @@
 				2291DD9619239D200010B2BE /* Lection.m */,
 				2294237A192F6AD9002AF98C /* AllLections.h */,
 				2294237B192F6AD9002AF98C /* AllLections.m */,
+				22A00B871940A251009721DB /* Course.h */,
+				22A00B881940A251009721DB /* Course.m */,
+				22A00B901940D331009721DB /* AllCourses.h */,
+				22A00B911940D331009721DB /* AllCourses.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -287,6 +289,40 @@
 				224274AA1913C17600B505C0 /* ViewController.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		22AAC8F1193DF8B100662F68 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				22ECD9841930BE0A00ACCD3A /* DetailViewController.h */,
+				22ECD9851930BE0A00ACCD3A /* DetailViewController.m */,
+				22AFF5FC193480600060FD2F /* TabViewController.h */,
+				22AFF5FD193480600060FD2F /* TabViewController.m */,
+				22B5F05E1924E8520047477B /* EditViewController.h */,
+				22B5F05F1924E8520047477B /* EditViewController.m */,
+				228B457419220F11002D403D /* CollectionViewController.h */,
+				228B457519220F11002D403D /* CollectionViewController.m */,
+				229E5F85193DBF9800E9129A /* SearchViewController.h */,
+				229E5F86193DBF9800E9129A /* SearchViewController.m */,
+				229E5F88193DC3C500E9129A /* PreviewViewController.h */,
+				229E5F89193DC3C500E9129A /* PreviewViewController.m */,
+				22A00B8419409EA9009721DB /* CourseViewController.h */,
+				22A00B8519409EA9009721DB /* CourseViewController.m */,
+				22A00B8A1940B2CC009721DB /* CourseEditViewController.h */,
+				22A00B8B1940B2CC009721DB /* CourseEditViewController.m */,
+			);
+			name = Tabbar;
+			sourceTree = "<group>";
+		};
+		22AAC8F2193DF92600662F68 /* DesignModel */ = {
+			isa = PBXGroup;
+			children = (
+				228B45791922241A002D403D /* cell.h */,
+				228B457A1922241A002D403D /* cell.m */,
+				22A00B8D1940C1FB009721DB /* TableViewCell.h */,
+				22A00B8E1940C1FB009721DB /* TableViewCell.m */,
+			);
+			name = DesignModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,8 +428,12 @@
 				222458E71913CFB600CBBB9C /* User.m in Sources */,
 				2294237C192F6AD9002AF98C /* AllLections.m in Sources */,
 				228B457B1922241A002D403D /* cell.m in Sources */,
+				22A00B8C1940B2CC009721DB /* CourseEditViewController.m in Sources */,
+				22A00B8619409EA9009721DB /* CourseViewController.m in Sources */,
 				229E5F8A193DC3C500E9129A /* PreviewViewController.m in Sources */,
+				22A00B921940D331009721DB /* AllCourses.m in Sources */,
 				224274AB1913C17600B505C0 /* ViewController.m in Sources */,
+				22A00B8F1940C1FB009721DB /* TableViewCell.m in Sources */,
 				22B5F0601924E8520047477B /* EditViewController.m in Sources */,
 				224274A51913C17600B505C0 /* AppDelegate.m in Sources */,
 				2291DD9719239D200010B2BE /* Lection.m in Sources */,
@@ -401,8 +441,8 @@
 				229E5F87193DBF9800E9129A /* SearchViewController.m in Sources */,
 				2210C8031915015C00816EF1 /* LogIn.m in Sources */,
 				22AFF5FE193480600060FD2F /* TabViewController.m in Sources */,
+				22A00B891940A251009721DB /* Course.m in Sources */,
 				224274CB1913C3DF00B505C0 /* NewUserViewController.m in Sources */,
-				222D9C921918D85800FAE989 /* HomeViewController.m in Sources */,
 				22AAC8EF193DE16C00662F68 /* LectionData.m in Sources */,
 				224274A11913C17600B505C0 /* main.m in Sources */,
 				228B457619220F11002D403D /* CollectionViewController.m in Sources */,

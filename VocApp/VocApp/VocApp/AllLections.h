@@ -13,7 +13,7 @@
 
 @interface AllLections : NSObject
 
-+(void) loadLections:(CollectionViewController*)ctrl;
++(void) loadLections:(id)ctrl;
 +(void) loadMyLections:(CollectionViewController*)ctrl;
 
 

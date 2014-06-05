@@ -11,5 +11,6 @@
 @interface cell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UILabel *label;
 @property  int row;
+@property (weak, nonatomic) IBOutlet UILabel *label2;
 
 @end

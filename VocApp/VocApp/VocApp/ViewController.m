@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "LogIn.h"
 #import "User.h"
-#import "HomeViewController.h"
+
 #import "AppDelegate.h"
 #import "TabViewController.h"
 

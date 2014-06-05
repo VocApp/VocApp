@@ -16,6 +16,7 @@
 
 @implementation EditViewController
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,6 +36,7 @@
 
 - (IBAction)finishEditting:(id)sender {
     [self.lection save];
+     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)clearTextfield{

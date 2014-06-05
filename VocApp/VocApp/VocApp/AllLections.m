@@ -14,7 +14,7 @@
 
 
 
-+(void) loadLections: (SearchViewController *) ctrl{
++(void) loadLections: (id ) ctrl{
     PFQuery *query = [PFQuery queryWithClassName:@"Lection"];
     [query findObjectsInBackgroundWithTarget: ctrl selector:@selector(loadComplete:error:)];
     NSLog(@"Ich lade ");

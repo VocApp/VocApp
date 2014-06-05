@@ -23,9 +23,7 @@
 
 @implementation CollectionViewController 
 
--(IBAction)back:(id)sender{
-    NSLog(@"back");
-}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -100,7 +98,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ((DetailViewController*)[segue destinationViewController]).lection=_lections[((cell*)sender).row];
+    if([segue.identifier isEqualToString:@"detail"])((DetailViewController*)[segue destinationViewController]).lection=_lections[((cell*)sender).row];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
