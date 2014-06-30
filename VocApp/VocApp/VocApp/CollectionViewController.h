@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CollectionViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate,UINavigationBarDelegate>
+@interface CollectionViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate,UINavigationBarDelegate,UINavigationControllerDelegate>
 
 - (void) loadComplete:(NSArray *)objects error:(NSError *)error;
-
+-(void)reload;
 @end

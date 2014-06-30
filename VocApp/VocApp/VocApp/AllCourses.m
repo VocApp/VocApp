@@ -8,6 +8,7 @@
 
 #import "AllCourses.h"
 
+
 @implementation AllCourses
 
 
@@ -18,11 +19,13 @@
     
 }
 
-//+(void) loadMyLections: (CollectionViewController*) crtl{
-//    PFUser *user = [PFUser currentUser];
-//    PFRelation *relation = [user relationforKey:@"Lections"];
-//    
-//    [[relation query] findObjectsInBackgroundWithTarget: crtl selector: @selector(loadComplete:error:)];
-//}
++(void) loadMyCourses: (id) crtl{
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Course"];
+    
+    [query whereKey:@"Members" equalTo:[PFUser currentUser]];
+    [query addDescendingOrder:@"createdAt"];
+    [query findObjectsInBackgroundWithTarget: crtl selector: @selector(loadCourseComplete:error:)];
+}
 
 @end

@@ -13,4 +13,5 @@
 @interface AllCourses : NSObject
 
 +(void) loadCourses: (id ) ctrl;
++(void) loadMyCourses: (id) crtl;
 @end

@@ -8,6 +8,7 @@
 
 #import "PreviewViewController.h"
 #import <Parse/Parse.h>
+#import "CollectionViewController.h"
 
 @interface PreviewViewController ()
 
@@ -33,6 +34,7 @@
     [user saveInBackground];
     
 }
+
 
 - (void)viewDidLoad
 {
