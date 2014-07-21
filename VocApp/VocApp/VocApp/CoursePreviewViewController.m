@@ -9,6 +9,7 @@
 #import "CoursePreviewViewController.h"
 #import "cell.h"
 #import "Detail2ViewController.h"
+#import "AddLectionViewController.h"
 
 @interface CoursePreviewViewController ()
 @property  NSArray *lections;
@@ -74,6 +75,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
    if([segue.identifier isEqualToString:@"detail2"])((Detail2ViewController*)[segue destinationViewController]).lection=_lections[((cell*)sender).row];
+    if([segue.identifier isEqualToString:@"addlection"])((AddLectionViewController*)[segue destinationViewController]).course=self.course;
+
 }
 
 

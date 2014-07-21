@@ -6,19 +6,18 @@
 //  Copyright (c) 2014 VocApp. All rights reserved.
 //
 
-#import "CourseEditViewController.h"
+#import "AddLectionViewController.h"
 #import "AllLections.h"
 #import "TableViewCell.h"
 
 
-@interface CourseEditViewController ()
+@interface AddLectionViewController ()
 @property NSArray *lections;
-@property (weak, nonatomic) IBOutlet UITextField *description;
 @property (strong,nonatomic) NSMutableArray * selected;
 @property (strong,nonatomic) NSMutableArray * selectedLections;
 @end
 
-@implementation CourseEditViewController
+@implementation AddLectionViewController
 
 
 
@@ -50,16 +49,16 @@
 - (void) loadComplete:(NSArray *)objects error:(NSError *)error {
     _lections=objects;
     [_tableview reloadData];
-    NSLog(@"%d",objects.count);
+    NSLog(@"geladen in Course %lu",(unsigned long)objects.count);
     int i;
     for (i=0; i<_lections.count; i++) {
         self.selected[i]=[NSNumber numberWithBool:NO];
     }
 }
-- (IBAction)tap:(id)sender {
-    [self.description endEditing:YES];
-    [self.name endEditing:YES];
-}
+
+
+
+
 - (IBAction)createCourse:(id)sender {
     
     
@@ -68,36 +67,47 @@
             [self.selectedLections addObject:self.lections[i]];
         }
     }
-    PFUser *user= [PFUser currentUser];
-    PFObject *course = [PFObject objectWithClassName:@"Course"];
-    PFRelation *relation = [course relationforKey:@"Lections"];
+    
+    PFRelation *relation = [self.course relationforKey:@"Lections"];
     for (int j=0; j<self.selectedLections.count; j++) {
         [relation addObject:self.selectedLections[j]];
     }
-    course[@"Description"]= self.description.text;
-    course[@"Author"] =user;
-    course[@"Name"]=_name.text;
-    PFRelation *relation3=[course relationForKey:@"Members"];
-    [relation3 addObject:user];
-    
-    [course saveInBackground];
+    [self.course saveInBackground];
     [self.navigationController popViewControllerAnimated:YES];
     
-    
 }
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    NSLog(@"HALLLOO");
-    [textField resignFirstResponder];
-    return NO;
-}
+
+
+
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    PFUser* user= [PFUser currentUser];
+    PFUser* aut = self.course[@"Author"];
+    NSLog(@"Author: %@",self.course[@"Author"]);
+    NSLog(@"Author: %@",user);
+    if (![user.objectId isEqualToString:aut.objectId]) {
+        UIAlertView* alert= [[UIAlertView alloc]initWithTitle:@"Keine Berechtigung" message:@"Sie sind nicht der Author des Kurses" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+        [alert show];
+    }else{
+    
+    
     [AllLections loadLections:self];
-    // Do any additional setup after loading the view.
+        self.name.text=self.course[@"Name"];
+    }
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    [self.navigationController popViewControllerAnimated:YES];
+
+}
+
+
+#pragma mark - Table view delegates
+
+
 
 - (NSInteger)numberOfSections{
     return 1;
@@ -106,10 +116,13 @@
     return _lections.count;
 }
 
+
+
+
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TableViewCell* cell = [[TableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"table"];
     PFObject * obj =(PFObject*) self.lections[indexPath.row];
- 
+    
     [[cell textLabel ]setText:obj[@"name"] ];
     
     if (_selected[indexPath.row]==[NSNumber numberWithBool:YES]) {
@@ -117,7 +130,7 @@
     }else{
         cell.accessoryType= UITableViewCellAccessoryNone;
     }
- 
+    
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -139,14 +152,14 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

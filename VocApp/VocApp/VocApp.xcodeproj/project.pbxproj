@@ -39,7 +39,6 @@
 		228B457B1922241A002D403D /* cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B457A1922241A002D403D /* cell.m */; };
 		2291DD9719239D200010B2BE /* Lection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291DD9619239D200010B2BE /* Lection.m */; };
 		2294237C192F6AD9002AF98C /* AllLections.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294237B192F6AD9002AF98C /* AllLections.m */; };
-		229C6FC41962B29100351CC7 /* CourseSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C6FC31962B29100351CC7 /* CourseSubmitViewController.m */; };
 		229C6FC71962B77200351CC7 /* CoursePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C6FC61962B77200351CC7 /* CoursePreviewViewController.m */; };
 		229E5F87193DBF9800E9129A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229E5F86193DBF9800E9129A /* SearchViewController.m */; };
 		229E5F8A193DC3C500E9129A /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229E5F89193DC3C500E9129A /* PreviewViewController.m */; };
@@ -53,6 +52,8 @@
 		22AFF5FE193480600060FD2F /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFF5FD193480600060FD2F /* TabViewController.m */; };
 		22B5F0601924E8520047477B /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5F05F1924E8520047477B /* EditViewController.m */; };
 		22B72D89197D3AF300DF17C2 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B72D88197D3AF300DF17C2 /* ResultViewController.m */; };
+		22B72D8C197D513200DF17C2 /* AddLectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B72D8B197D513200DF17C2 /* AddLectionViewController.m */; };
+		22B72D8D197D618E00DF17C2 /* CourseSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C6FC31962B29100351CC7 /* CourseSubmitViewController.m */; };
 		22C42E18197D20E0002F0177 /* LectionStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C42E17197D20E0002F0177 /* LectionStatsViewController.m */; };
 		22ECD9861930BE0A00ACCD3A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ECD9851930BE0A00ACCD3A /* DetailViewController.m */; };
 /* End PBXBuildFile section */
@@ -140,6 +141,8 @@
 		22B5F05F1924E8520047477B /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		22B72D87197D3AF300DF17C2 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		22B72D88197D3AF300DF17C2 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		22B72D8A197D513200DF17C2 /* AddLectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLectionViewController.h; sourceTree = "<group>"; };
+		22B72D8B197D513200DF17C2 /* AddLectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLectionViewController.m; sourceTree = "<group>"; };
 		22C42E16197D20E0002F0177 /* LectionStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectionStatsViewController.h; sourceTree = "<group>"; };
 		22C42E17197D20E0002F0177 /* LectionStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectionStatsViewController.m; sourceTree = "<group>"; };
 		22ECD9841930BE0A00ACCD3A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 				22C42E17197D20E0002F0177 /* LectionStatsViewController.m */,
 				22B72D87197D3AF300DF17C2 /* ResultViewController.h */,
 				22B72D88197D3AF300DF17C2 /* ResultViewController.m */,
+				22B72D8A197D513200DF17C2 /* AddLectionViewController.h */,
+				22B72D8B197D513200DF17C2 /* AddLectionViewController.m */,
 			);
 			name = Tabbar;
 			sourceTree = "<group>";
@@ -450,7 +455,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				229C6FC41962B29100351CC7 /* CourseSubmitViewController.m in Sources */,
 				222458E71913CFB600CBBB9C /* User.m in Sources */,
 				2294237C192F6AD9002AF98C /* AllLections.m in Sources */,
 				228B457B1922241A002D403D /* cell.m in Sources */,
@@ -470,6 +474,7 @@
 				2210C8031915015C00816EF1 /* LogIn.m in Sources */,
 				22AFF5FE193480600060FD2F /* TabViewController.m in Sources */,
 				22A00B891940A251009721DB /* Course.m in Sources */,
+				22B72D8D197D618E00DF17C2 /* CourseSubmitViewController.m in Sources */,
 				229C6FC71962B77200351CC7 /* CoursePreviewViewController.m in Sources */,
 				224274CB1913C3DF00B505C0 /* NewUserViewController.m in Sources */,
 				22AAC8EF193DE16C00662F68 /* LectionData.m in Sources */,
@@ -477,6 +482,7 @@
 				228B457619220F11002D403D /* CollectionViewController.m in Sources */,
 				22ECD9861930BE0A00ACCD3A /* DetailViewController.m in Sources */,
 				22B72D89197D3AF300DF17C2 /* ResultViewController.m in Sources */,
+				22B72D8C197D513200DF17C2 /* AddLectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

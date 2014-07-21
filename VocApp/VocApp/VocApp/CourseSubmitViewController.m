@@ -9,6 +9,7 @@
 #import "CourseSubmitViewController.h"
 
 @interface CourseSubmitViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *description;
 
 @end
 
@@ -31,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.description.text=self.course[@"Description"];
 }
 
 - (void)didReceiveMemoryWarning

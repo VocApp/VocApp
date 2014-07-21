@@ -43,8 +43,8 @@
     }
     avgR=avgR/stat.count;
     avgT=avgT/stat.count;
-    self.tryCount.text=[NSString stringWithFormat:@"%.01f",avgT ] ;
-    self.right.text=[NSString stringWithFormat:@"%.01f",avgR ] ;
+    self.tryCount.text=[NSString stringWithFormat:@"Anzahl Versuche: %.01f /Wort",avgT ] ;
+    self.right.text=[NSString stringWithFormat:@"davon richtig: %.01f",avgR ] ;
     
     float rightWords=0.0;
     for ( i=0; i<stat.count; i++) {
@@ -57,8 +57,8 @@
     
     rightWords = rightWords/stat.count;
     rightWords=rightWords*100;
-    
-    self.bewertung.text=[NSString stringWithFormat:@"%0.0f",rightWords ];
+    NSLog(@"richtigeWorte: %f",rightWords);
+    self.bewertung.text=[NSString stringWithFormat:@"Bewertung: %0.0f %%",rightWords ];
     
 }
 

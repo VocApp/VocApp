@@ -19,6 +19,7 @@
 
 @interface CollectionViewController ()
 @property NSArray *lections;
+
 @property UICollectionView* Collectionview;
 @property NSInteger selectedItem;
 @property NSArray *courses;
@@ -52,6 +53,12 @@
         title.text=@"Kurse";
     }
     return rview;
+}
+- (IBAction)tap:(UITapGestureRecognizer *)sender {
+    if(sender.state==UIGestureRecognizerStateBegan){
+       // cell* cell= (cell* ) sender.view;
+//        [cell setBackgroundColor: [UIColor colorWithRed:0.0 green:0.7 blue:1.0 alpha:0.5]];
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
@@ -243,6 +250,7 @@
 //        refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
 //     [refresh endRefreshing];
   }
+
 
 -(void)reload
 {
