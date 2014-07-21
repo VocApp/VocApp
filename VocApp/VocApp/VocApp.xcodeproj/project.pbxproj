@@ -52,6 +52,7 @@
 		22AAC8EF193DE16C00662F68 /* LectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC8EE193DE16C00662F68 /* LectionData.m */; };
 		22AFF5FE193480600060FD2F /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFF5FD193480600060FD2F /* TabViewController.m */; };
 		22B5F0601924E8520047477B /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5F05F1924E8520047477B /* EditViewController.m */; };
+		22B72D89197D3AF300DF17C2 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B72D88197D3AF300DF17C2 /* ResultViewController.m */; };
 		22C42E18197D20E0002F0177 /* LectionStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C42E17197D20E0002F0177 /* LectionStatsViewController.m */; };
 		22ECD9861930BE0A00ACCD3A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ECD9851930BE0A00ACCD3A /* DetailViewController.m */; };
 /* End PBXBuildFile section */
@@ -137,6 +138,8 @@
 		22AFF5FD193480600060FD2F /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 		22B5F05E1924E8520047477B /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		22B5F05F1924E8520047477B /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		22B72D87197D3AF300DF17C2 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		22B72D88197D3AF300DF17C2 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		22C42E16197D20E0002F0177 /* LectionStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectionStatsViewController.h; sourceTree = "<group>"; };
 		22C42E17197D20E0002F0177 /* LectionStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectionStatsViewController.m; sourceTree = "<group>"; };
 		22ECD9841930BE0A00ACCD3A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				229C6FC61962B77200351CC7 /* CoursePreviewViewController.m */,
 				22C42E16197D20E0002F0177 /* LectionStatsViewController.h */,
 				22C42E17197D20E0002F0177 /* LectionStatsViewController.m */,
+				22B72D87197D3AF300DF17C2 /* ResultViewController.h */,
+				22B72D88197D3AF300DF17C2 /* ResultViewController.m */,
 			);
 			name = Tabbar;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				224274A11913C17600B505C0 /* main.m in Sources */,
 				228B457619220F11002D403D /* CollectionViewController.m in Sources */,
 				22ECD9861930BE0A00ACCD3A /* DetailViewController.m in Sources */,
+				22B72D89197D3AF300DF17C2 /* ResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

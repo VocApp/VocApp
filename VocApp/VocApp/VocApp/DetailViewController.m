@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "AllLections.h"
 #import "LectionStatsViewController.h"
+#import "ResultViewController.h"
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *label1;
@@ -21,6 +22,8 @@
 @property float actualWordIndexFloat,maxWordIndexFloat;
 @property BOOL inCorrectMode;
 @property (strong,nonatomic) PFObject* statsPF;
+@property int rightWords;
+@property (strong,nonatomic) NSMutableArray* wrongWords;
 
 
 @end
@@ -43,13 +46,21 @@
         UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Lektion beendet" message:@"Lektion abgeschlossen" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil ];
         [alert show];
         
+        [self performSegueWithIdentifier:@"auswertung" sender:self];
+        
 //        [self.navigationController popToRootViewControllerAnimated:YES];
         return NO;
     }
     return YES;
 }
 
+-(NSMutableArray*) wrongWords{
+    if (_wrongWords==nil) {
+        _wrongWords=[[NSMutableArray alloc]init];
+    }
+    return _wrongWords;
 
+}
 
 - (IBAction)swipeToCorrect:(UISwipeGestureRecognizer *)sender {
     NSLog(@"swipped");
@@ -60,13 +71,14 @@
             
                 if([_translation.text isEqualToString: _array[_actualWordIndex][1] ]){
                     NSLog(@"Richtig");
+                    self.rightWords++;
                     NSNumber *num1=self.stats[_actualWordIndex][0];
                     NSNumber *num=self.stats[_actualWordIndex][1];
                     NSInteger a=[num integerValue];
                     NSInteger b=[num1 integerValue];
                     self.stats[self.actualWordIndex]=@[[NSNumber numberWithInt:b+1],[NSNumber numberWithInt:a+1]];
                     self.VocappView.backgroundColor=[UIColor    colorWithRed:0.0f green:1.0 blue:0 alpha:0.25];
-                    
+                   
                     _inCorrectMode=NO;
                     self.actualWordIndex++;
                     _actualWordIndexFloat++;
@@ -83,6 +95,7 @@
                     
                     self.progress.progress=self.actualWordIndex/self.maxWordIndex;
                     self.correction.text=_array[_actualWordIndex][1];
+                    [self.wrongWords addObject:self.array[_actualWordIndex]];
                     self.actualWordIndex++;
                     _actualWordIndexFloat++;
                     float prog=((self.actualWordIndexFloat)/self.maxWordIndexFloat);
@@ -132,6 +145,7 @@
     _maxWordIndexFloat=_array.count;
     _actualWordIndex=0;
     _actualWordIndexFloat=0.0;
+    _rightWords=0;
    _inCorrectMode=YES;
    
 }
@@ -154,7 +168,12 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    if([segue.identifier isEqualToString:@"auswertung"]){
+        
+        ((ResultViewController*)[segue destinationViewController]).rightWords=self.rightWords;
+        ((ResultViewController*)[segue destinationViewController]).words=self.maxWordIndex;
+        ((ResultViewController*)[segue destinationViewController]).falsch=self.wrongWords;
+    }
     if([segue.identifier isEqualToString:@"stats"]){
        ((LectionStatsViewController*)[segue destinationViewController]).stats=self.statsPF;
        ((LectionStatsViewController*)[segue destinationViewController]).lection=self.lection;

@@ -45,7 +45,20 @@
     avgT=avgT/stat.count;
     self.tryCount.text=[NSString stringWithFormat:@"%.01f",avgT ] ;
     self.right.text=[NSString stringWithFormat:@"%.01f",avgR ] ;
-
+    
+    float rightWords=0.0;
+    for ( i=0; i<stat.count; i++) {
+        
+        NSNumber* tmp1=stat[i][1];
+        if ([tmp1 intValue]>=2) {
+            rightWords++;
+        }
+    }
+    
+    rightWords = rightWords/stat.count;
+    rightWords=rightWords*100;
+    
+    self.bewertung.text=[NSString stringWithFormat:@"%0.0f",rightWords ];
     
 }
 
