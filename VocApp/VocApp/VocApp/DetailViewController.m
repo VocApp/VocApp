@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "AllLections.h"
+#import "LectionStatsViewController.h"
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *label1;
@@ -19,7 +20,7 @@
 @property  int  maxWordIndex;
 @property float actualWordIndexFloat,maxWordIndexFloat;
 @property BOOL inCorrectMode;
-@property (weak,nonatomic) PFObject* statsPF;
+@property (strong,nonatomic) PFObject* statsPF;
 
 
 @end
@@ -61,9 +62,9 @@
                     NSLog(@"Richtig");
                     NSNumber *num1=self.stats[_actualWordIndex][0];
                     NSNumber *num=self.stats[_actualWordIndex][1];
-                    int a=[num intValue];
-                    int b=[num1 intValue];
-                    self.stats[self.actualWordIndex][1]=@[[NSNumber numberWithInt:b+1],[NSNumber numberWithInt:a+1]];
+                    NSInteger a=[num integerValue];
+                    NSInteger b=[num1 integerValue];
+                    self.stats[self.actualWordIndex]=@[[NSNumber numberWithInt:b+1],[NSNumber numberWithInt:a+1]];
                     self.VocappView.backgroundColor=[UIColor    colorWithRed:0.0f green:1.0 blue:0 alpha:0.25];
                     
                     _inCorrectMode=NO;
@@ -71,11 +72,16 @@
                     _actualWordIndexFloat++;
                     [self.progress setProgress:((self.actualWordIndexFloat)/self.maxWordIndexFloat) animated:YES];
                 }else{
-                    
+                    NSLog(@"Falsch");
+                    NSNumber *num1=self.stats[_actualWordIndex][0];
+                    NSNumber *num=self.stats[_actualWordIndex][1];
+                    NSInteger a=[num integerValue];
+                    NSInteger b=[num1 integerValue];
+                    self.stats[self.actualWordIndex]=@[[NSNumber numberWithInt:b+1],[NSNumber numberWithInt:a]];
                     self.VocappView.backgroundColor=[UIColor    colorWithRed:1.0f green:0.0 blue:0 alpha:0.25];
                         _inCorrectMode=NO;
                     
-                        self.progress.progress=self.actualWordIndex/self.maxWordIndex;
+                    self.progress.progress=self.actualWordIndex/self.maxWordIndex;
                     self.correction.text=_array[_actualWordIndex][1];
                     self.actualWordIndex++;
                     _actualWordIndexFloat++;
@@ -112,10 +118,11 @@
         NSLog(@"log:: %@",_stats);
         if (self.stats==nil) {
             self.stats=[[NSMutableArray alloc]initWithCapacity:_array.count] ;
-        }
-        int i;
-        for(i=0;i<self.array.count;i++){
-            [self.stats addObject:@[@0,@0]];
+        
+            NSInteger i;
+            for(i=0;i<self.array.count;i++){
+                [self.stats addObject:@[@0,@0]];
+            }
         }
     }];
     NSLog(@"Wörter in Lektion:%d",_array.count);
@@ -129,21 +136,32 @@
    
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    NSLog(@"Disappear");
+    self.statsPF[@"Stats"]=self.stats ;
+    [self.statsPF saveInBackground];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    if([segue.identifier isEqualToString:@"stats"]){
+       ((LectionStatsViewController*)[segue destinationViewController]).stats=self.statsPF;
+       ((LectionStatsViewController*)[segue destinationViewController]).lection=self.lection;
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
