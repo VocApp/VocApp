@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface cell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (strong, nonatomic) IBOutlet UILabel *label;
-@property  int row;
+@property  int row,sec;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UILabel *label3;
+
 
 @end

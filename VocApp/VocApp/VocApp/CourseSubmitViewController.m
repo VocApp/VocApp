@@ -1,20 +1,18 @@
 //
-//  PreviewViewController.m
+//  CourseSubmitViewController.m
 //  VocApp
 //
-//  Created by Tim Härle on 03.06.14.
+//  Created by Tim on 01.07.14.
 //  Copyright (c) 2014 VocApp. All rights reserved.
 //
 
-#import "PreviewViewController.h"
-#import <Parse/Parse.h>
-#import "CollectionViewController.h"
+#import "CourseSubmitViewController.h"
 
-@interface PreviewViewController ()
+@interface CourseSubmitViewController ()
 
 @end
 
-@implementation PreviewViewController
+@implementation CourseSubmitViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,26 +22,16 @@
     }
     return self;
 }
-- (IBAction)add:(id)sender {
-
-    
-    
-    PFUser *user = [PFUser currentUser];
-    PFRelation *relation = [user relationforKey:@"Lections"];
-    [relation addObject:_lection];
-    [user saveInBackground];
-    PFObject* stat=[PFObject objectWithClassName:@"Stats"];
-    stat[@"User"]=user;
-    stat[@"Lection"]=_lection;
-    [stat saveInBackground];
+- (IBAction)enterCourse:(id)sender {
+    PFRelation* relation=[self.course relationForKey:@"Members"];
+    [relation addObject:[PFUser currentUser]];
+    [_course saveInBackground];
 }
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)didReceiveMemoryWarning

@@ -48,7 +48,7 @@
     PFObject *lec =(PFObject*) _lections[indexPath.row] ;
     cell.label.text =lec[@"name"];
     cell.row=indexPath.row;
-    [cell.layer setCornerRadius:50.0f ];
+   [cell.layer setCornerRadius:50.0f ];
     
     return cell;
 }
@@ -69,7 +69,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [AllLections loadLections:self];
-    self.navigationItem.title=[PFUser currentUser].username;
+   // self.navigationItem.title=[PFUser currentUser].username;
     // NSLog(@"nav:%hhd", [self.navigationController isMemberOfClass:[MainNavigationViewController class ]]);
      NSUserDefaults* userDef = [NSUserDefaults standardUserDefaults];
     PFObject* obj =  [userDef objectForKey:@"lections"];

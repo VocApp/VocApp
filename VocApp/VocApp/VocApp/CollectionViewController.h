@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CollectionViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate,UINavigationBarDelegate,UINavigationControllerDelegate>
+@interface CollectionViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate,UINavigationBarDelegate,UINavigationControllerDelegate,UIGestureRecognizerDelegate,UIAlertViewDelegate>
 
 - (void) loadComplete:(NSArray *)objects error:(NSError *)error;
 -(void)reload;
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer;
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 @end

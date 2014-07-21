@@ -34,10 +34,13 @@
 		224274DB1913C66800B505C0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274DA1913C66800B505C0 /* Security.framework */; };
 		224274DD1913C67A00B505C0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274DC1913C67A00B505C0 /* StoreKit.framework */; };
 		224274DF1913C69800B505C0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224274DE1913C69800B505C0 /* SystemConfiguration.framework */; };
+		22801C6919656A22009D9DFA /* Detail2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22801C6819656A22009D9DFA /* Detail2ViewController.m */; };
 		228B457619220F11002D403D /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B457519220F11002D403D /* CollectionViewController.m */; };
 		228B457B1922241A002D403D /* cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B457A1922241A002D403D /* cell.m */; };
 		2291DD9719239D200010B2BE /* Lection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291DD9619239D200010B2BE /* Lection.m */; };
 		2294237C192F6AD9002AF98C /* AllLections.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294237B192F6AD9002AF98C /* AllLections.m */; };
+		229C6FC41962B29100351CC7 /* CourseSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C6FC31962B29100351CC7 /* CourseSubmitViewController.m */; };
+		229C6FC71962B77200351CC7 /* CoursePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C6FC61962B77200351CC7 /* CoursePreviewViewController.m */; };
 		229E5F87193DBF9800E9129A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229E5F86193DBF9800E9129A /* SearchViewController.m */; };
 		229E5F8A193DC3C500E9129A /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229E5F89193DC3C500E9129A /* PreviewViewController.m */; };
 		22A00B8619409EA9009721DB /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A00B8519409EA9009721DB /* CourseViewController.m */; };
@@ -98,6 +101,8 @@
 		224274DA1913C66800B505C0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		224274DC1913C67A00B505C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		224274DE1913C69800B505C0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		22801C6719656A22009D9DFA /* Detail2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail2ViewController.h; sourceTree = "<group>"; };
+		22801C6819656A22009D9DFA /* Detail2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detail2ViewController.m; sourceTree = "<group>"; };
 		228B457419220F11002D403D /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		228B457519220F11002D403D /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		228B45791922241A002D403D /* cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cell.h; sourceTree = "<group>"; };
@@ -106,6 +111,10 @@
 		2291DD9619239D200010B2BE /* Lection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lection.m; sourceTree = "<group>"; };
 		2294237A192F6AD9002AF98C /* AllLections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLections.h; sourceTree = "<group>"; };
 		2294237B192F6AD9002AF98C /* AllLections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLections.m; sourceTree = "<group>"; };
+		229C6FC21962B29100351CC7 /* CourseSubmitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseSubmitViewController.h; sourceTree = "<group>"; };
+		229C6FC31962B29100351CC7 /* CourseSubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseSubmitViewController.m; sourceTree = "<group>"; };
+		229C6FC51962B77200351CC7 /* CoursePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursePreviewViewController.h; sourceTree = "<group>"; };
+		229C6FC61962B77200351CC7 /* CoursePreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursePreviewViewController.m; sourceTree = "<group>"; };
 		229E5F85193DBF9800E9129A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		229E5F86193DBF9800E9129A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		229E5F88193DC3C500E9129A /* PreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewViewController.h; sourceTree = "<group>"; };
@@ -296,6 +305,8 @@
 			children = (
 				22ECD9841930BE0A00ACCD3A /* DetailViewController.h */,
 				22ECD9851930BE0A00ACCD3A /* DetailViewController.m */,
+				22801C6719656A22009D9DFA /* Detail2ViewController.h */,
+				22801C6819656A22009D9DFA /* Detail2ViewController.m */,
 				22AFF5FC193480600060FD2F /* TabViewController.h */,
 				22AFF5FD193480600060FD2F /* TabViewController.m */,
 				22B5F05E1924E8520047477B /* EditViewController.h */,
@@ -310,6 +321,10 @@
 				22A00B8519409EA9009721DB /* CourseViewController.m */,
 				22A00B8A1940B2CC009721DB /* CourseEditViewController.h */,
 				22A00B8B1940B2CC009721DB /* CourseEditViewController.m */,
+				229C6FC21962B29100351CC7 /* CourseSubmitViewController.h */,
+				229C6FC31962B29100351CC7 /* CourseSubmitViewController.m */,
+				229C6FC51962B77200351CC7 /* CoursePreviewViewController.h */,
+				229C6FC61962B77200351CC7 /* CoursePreviewViewController.m */,
 			);
 			name = Tabbar;
 			sourceTree = "<group>";
@@ -425,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229C6FC41962B29100351CC7 /* CourseSubmitViewController.m in Sources */,
 				222458E71913CFB600CBBB9C /* User.m in Sources */,
 				2294237C192F6AD9002AF98C /* AllLections.m in Sources */,
 				228B457B1922241A002D403D /* cell.m in Sources */,
@@ -436,12 +452,14 @@
 				22A00B8F1940C1FB009721DB /* TableViewCell.m in Sources */,
 				22B5F0601924E8520047477B /* EditViewController.m in Sources */,
 				224274A51913C17600B505C0 /* AppDelegate.m in Sources */,
+				22801C6919656A22009D9DFA /* Detail2ViewController.m in Sources */,
 				2291DD9719239D200010B2BE /* Lection.m in Sources */,
 				22AAC8EC193DDF3600662F68 /* Model.xcdatamodeld in Sources */,
 				229E5F87193DBF9800E9129A /* SearchViewController.m in Sources */,
 				2210C8031915015C00816EF1 /* LogIn.m in Sources */,
 				22AFF5FE193480600060FD2F /* TabViewController.m in Sources */,
 				22A00B891940A251009721DB /* Course.m in Sources */,
+				229C6FC71962B77200351CC7 /* CoursePreviewViewController.m in Sources */,
 				224274CB1913C3DF00B505C0 /* NewUserViewController.m in Sources */,
 				22AAC8EF193DE16C00662F68 /* LectionData.m in Sources */,
 				224274A11913C17600B505C0 /* main.m in Sources */,

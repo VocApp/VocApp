@@ -33,6 +33,9 @@
     
     
 }
+- (IBAction)abbruch:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (IBAction)finishEditting:(id)sender {
     [self.lection save];
