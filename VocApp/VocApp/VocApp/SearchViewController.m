@@ -71,22 +71,22 @@
     [AllLections loadLections:self];
    // self.navigationItem.title=[PFUser currentUser].username;
     // NSLog(@"nav:%hhd", [self.navigationController isMemberOfClass:[MainNavigationViewController class ]]);
-     NSUserDefaults* userDef = [NSUserDefaults standardUserDefaults];
-    PFObject* obj =  [userDef objectForKey:@"lections"];
-    NSLog(@"%@",obj[@"name"]);
+    // NSUserDefaults* userDef = [NSUserDefaults standardUserDefaults];
+   // PFObject* obj =  [userDef objectForKey:@"lections"];
+    //NSLog(@"%@",obj[@"name"]);
     
     
 }
 
 
-- (IBAction)Logout:(id)sender {
-    [PFUser logOut];
-    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ViewController *obj=[story instantiateViewControllerWithIdentifier:@"login"];
-    self.navigationController.navigationBarHidden=YES;
-    [self.tabBarController.tabBar setHidden:YES];
-    [self.navigationController pushViewController:obj animated:YES];
-}
+//- (IBAction)Logout:(id)sender {
+//    [PFUser logOut];
+//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    ViewController *obj=[story instantiateViewControllerWithIdentifier:@"login"];
+//    self.navigationController.navigationBarHidden=YES;
+//    [self.tabBarController.tabBar setHidden:YES];
+//    [self.navigationController pushViewController:obj animated:YES];
+//}
 
 
 - (void)didReceiveMemoryWarning
@@ -95,13 +95,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)refresh:(id)sender {
+    [AllLections loadLections:self];
+}
+
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-      ((PreviewViewController*)[segue destinationViewController]).lection=_lections[((cell*)sender).row];
+    if ([segue.identifier isEqualToString:@"lection"]) {
+        
+    ((PreviewViewController*)[segue destinationViewController]).lection=_lections[((cell*)sender).row];
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

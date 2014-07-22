@@ -72,7 +72,9 @@
     for (int j=0; j<self.selectedLections.count; j++) {
         [relation addObject:self.selectedLections[j]];
     }
-    [self.course saveInBackground];
+    [self.course saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [self.parent reloadWithCourse:self.course];
+    }];
     [self.navigationController popViewControllerAnimated:YES];
     
 }

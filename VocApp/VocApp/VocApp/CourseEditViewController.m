@@ -56,10 +56,7 @@
         self.selected[i]=[NSNumber numberWithBool:NO];
     }
 }
-- (IBAction)tap:(id)sender {
-    [self.description endEditing:YES];
-    [self.name endEditing:YES];
-}
+
 - (IBAction)createCourse:(id)sender {
     
     
@@ -91,14 +88,23 @@
     return NO;
 }
 
-
+UIGestureRecognizer *tapper;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [AllLections loadLections:self];
     // Do any additional setup after loading the view.
+    
+    [super viewDidLoad];
+    tapper = [[UITapGestureRecognizer alloc]
+              initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapper];
 }
-
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
+}
 - (NSInteger)numberOfSections{
     return 1;
 }

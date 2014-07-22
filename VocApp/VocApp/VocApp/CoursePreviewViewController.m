@@ -62,6 +62,12 @@
     NSLog(@"Lections: %d",_lections.count);
       [_Collectionview reloadData];
 }
+
+-(void)reloadWithCourse:(PFObject*)course{
+    PFRelation* rel=[course relationForKey:@"Lections"];
+    [[rel query] findObjectsInBackgroundWithTarget:self selector:@selector(found:error:)];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -75,8 +81,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
    if([segue.identifier isEqualToString:@"detail2"])((Detail2ViewController*)[segue destinationViewController]).lection=_lections[((cell*)sender).row];
-    if([segue.identifier isEqualToString:@"addlection"])((AddLectionViewController*)[segue destinationViewController]).course=self.course;
-
+    if([segue.identifier isEqualToString:@"addlection"]){
+        ((AddLectionViewController*)[segue destinationViewController]).course=self.course;
+        ((AddLectionViewController*)[segue destinationViewController]).parent=self;
+    }
 }
 
 

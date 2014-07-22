@@ -71,6 +71,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)refresh:(id)sender {
+    [AllCourses loadCourses:self];
+}
 
 
 #pragma mark - Navigation

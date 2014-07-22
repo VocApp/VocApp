@@ -67,15 +67,30 @@
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"%@", [alertView textFieldAtIndex:0].text);
-    self.lection=[Lection new];
-    self.lection.name=[alertView textFieldAtIndex:0].text;
+    if (buttonIndex==1) {
+        NSString *text=[alertView textFieldAtIndex:0].text;
+        NSLog(@"%@", [alertView textFieldAtIndex:0].text);
+        if (text.length<1) {
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Neue Lektion"
+                                                          message:@"Name darf nicht leer sein Abbrechen oder Name angeben"
+                                                         delegate:self cancelButtonTitle:@"Abbrechen" otherButtonTitles:@"ok", nil];
+            alert.alertViewStyle=UIAlertViewStylePlainTextInput;
+            
+            [alert show];
+
+        }
+        self.lection=[Lection new];
+        self.lection.name=text;
+   
+    }else if(buttonIndex==0){
+     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Neue Lektion"
                                                   message:@"Bitte Name eintragen"
-                                                 delegate:self cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+                                                 delegate:self cancelButtonTitle:@"Abbrechen" otherButtonTitles:@"ok", nil];
     alert.alertViewStyle=UIAlertViewStylePlainTextInput;
     
     [alert show];

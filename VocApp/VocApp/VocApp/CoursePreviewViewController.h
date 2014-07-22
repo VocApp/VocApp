@@ -12,4 +12,5 @@
 @interface CoursePreviewViewController : UICollectionViewController
 @property PFObject* course;
 -(void)found:(NSArray *)objects error:(NSError *)error;
+-(void)reloadWithCourse:(PFObject*)course;
 @end

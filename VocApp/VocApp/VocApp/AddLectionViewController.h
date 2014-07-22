@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "CoursePreviewViewController.h"
 
 
 @interface AddLectionViewController : UIViewController <UIAlertViewDelegate,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property PFObject* course;
+@property CoursePreviewViewController* parent;
 @end
