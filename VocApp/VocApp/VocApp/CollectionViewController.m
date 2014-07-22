@@ -112,7 +112,7 @@
         cell.label.text =lec[@"name"];
         cell.row=indexPath.row;
         cell.sec=indexPath.section;
-       [cell.layer setCornerRadius:50.0f ];
+       
        
         return cell;
         
@@ -122,7 +122,7 @@
         cell.label.text =course[@"Name"];
         cell.row=indexPath.row;
         cell.sec=indexPath.section;
-        [cell.layer setCornerRadius:15.0f ];
+       
     
     
     return cell;

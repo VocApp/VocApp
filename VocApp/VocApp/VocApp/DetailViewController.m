@@ -95,6 +95,7 @@
                     
                     self.progress.progress=self.actualWordIndex/self.maxWordIndex;
                     self.correction.text=_array[_actualWordIndex][1];
+                    [self.translation setEnabled:NO];
                     [self.wrongWords addObject:self.array[_actualWordIndex]];
                     self.actualWordIndex++;
                     _actualWordIndexFloat++;
@@ -108,6 +109,8 @@
                 self.original.text=self.array[self.actualWordIndex][0];
                 self.translation.text=@"";
                 self.correction.text=@"";
+                [self.translation setEnabled:YES];
+            [self.translation becomeFirstResponder];
                 _inCorrectMode=YES;
             break;
 
@@ -141,6 +144,7 @@
     NSLog(@"Wörter in Lektion:%d",_array.count);
     _original.text=_array[0][0];
     self.correction.text=@"";
+    [self.translation becomeFirstResponder];
     _maxWordIndex=_array.count;
     _maxWordIndexFloat=_array.count;
     _actualWordIndex=0;

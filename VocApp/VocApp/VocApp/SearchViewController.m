@@ -13,6 +13,7 @@
 #import "cell.h"
 #import "ViewController.h"
 #import "PreviewViewController.h"
+#import "EditViewController.h"
 
 @interface SearchViewController ()
 @property NSArray *lections;
@@ -35,7 +36,7 @@
 {
     _Collectionview=view;
     
-    NSLog(@"%d",_lections.count);
+    
     return _lections.count;
 }
 
@@ -48,7 +49,7 @@
     PFObject *lec =(PFObject*) _lections[indexPath.row] ;
     cell.label.text =lec[@"name"];
     cell.row=indexPath.row;
-   [cell.layer setCornerRadius:50.0f ];
+   
     
     return cell;
 }
@@ -67,26 +68,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [AllLections loadLections:self];
-   // self.navigationItem.title=[PFUser currentUser].username;
-    // NSLog(@"nav:%hhd", [self.navigationController isMemberOfClass:[MainNavigationViewController class ]]);
-    // NSUserDefaults* userDef = [NSUserDefaults standardUserDefaults];
-   // PFObject* obj =  [userDef objectForKey:@"lections"];
-    //NSLog(@"%@",obj[@"name"]);
+
     
     
 }
 
 
-//- (IBAction)Logout:(id)sender {
-//    [PFUser logOut];
-//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    ViewController *obj=[story instantiateViewControllerWithIdentifier:@"login"];
-//    self.navigationController.navigationBarHidden=YES;
-//    [self.tabBarController.tabBar setHidden:YES];
-//    [self.navigationController pushViewController:obj animated:YES];
-//}
 
 
 - (void)didReceiveMemoryWarning
@@ -98,7 +86,9 @@
 - (IBAction)refresh:(id)sender {
     [AllLections loadLections:self];
 }
-
+-(void)reload{
+    [AllLections loadLections:self];
+}
 
 #pragma mark - Navigation
 
@@ -108,6 +98,10 @@
     if ([segue.identifier isEqualToString:@"lection"]) {
         
     ((PreviewViewController*)[segue destinationViewController]).lection=_lections[((cell*)sender).row];
+    }
+    if ([segue.identifier isEqualToString:@"new"]) {
+        
+        ((EditViewController*)[segue destinationViewController]).parent=self;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

@@ -41,7 +41,7 @@
     PFObject *lec =(PFObject*) _lections[indexPath.row] ;
     cell.label3.text =lec[@"name"];
     cell.row=indexPath.row;
-    [cell.layer setCornerRadius:46.0f ];
+    
     
     return cell;
 }

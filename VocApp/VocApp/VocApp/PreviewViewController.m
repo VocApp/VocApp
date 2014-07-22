@@ -36,6 +36,7 @@
     stat[@"User"]=user;
     stat[@"Lection"]=_lection;
     [stat saveInBackground];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

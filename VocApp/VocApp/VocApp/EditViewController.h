@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Lection.h"
+#import "SearchViewController.h"
 
 @interface EditViewController : UIViewController <UITextFieldDelegate,UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *original;
 @property (weak, nonatomic) IBOutlet UITextField *translation;
 @property (strong,nonatomic)Lection *lection;
+@property SearchViewController* parent;
 
 -(void)clearTextfield;
 @end

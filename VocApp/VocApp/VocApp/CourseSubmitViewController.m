@@ -27,6 +27,8 @@
     PFRelation* relation=[self.course relationForKey:@"Members"];
     [relation addObject:[PFUser currentUser]];
     [_course saveInBackground];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad

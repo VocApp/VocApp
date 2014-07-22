@@ -11,6 +11,7 @@
 #import "cell.h"
 #import "AllCourses.h"
 #import "CourseSubmitViewController.h"
+#import "CourseEditViewController.h"
 
 @interface CourseViewController ()
 @property (nonatomic,strong) NSArray *courses;
@@ -44,7 +45,7 @@
     
     cell.label2.text =cou[@"Name"];
     cell.row=indexPath.row;
-    [cell.layer setCornerRadius:15.0f ];
+
     
     return cell;
 }
@@ -74,14 +75,18 @@
 - (IBAction)refresh:(id)sender {
     [AllCourses loadCourses:self];
 }
-
+-(void)reload{
+    [AllCourses loadCourses:self];
+}
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-   if([segue.identifier isEqualToString:@"enter"])((CourseSubmitViewController*)[segue destinationViewController]).course=_courses[((cell*)sender).row];}
+   if([segue.identifier isEqualToString:@"enter"])((CourseSubmitViewController*)[segue destinationViewController]).course=_courses[((cell*)sender).row];
+    if([segue.identifier isEqualToString:@"newC"])((CourseEditViewController*)[segue destinationViewController]).parent=self;
+}
 
 
 @end

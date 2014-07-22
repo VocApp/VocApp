@@ -74,10 +74,14 @@
     course[@"Description"]= self.description.text;
     course[@"Author"] =user;
     course[@"Name"]=_name.text;
+    //course[@"Name"]=[alertView textFieldAtIndex:0].text;
     PFRelation *relation3=[course relationForKey:@"Members"];
     [relation3 addObject:user];
     
-    [course saveInBackground];
+    [course saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [self.parent reload];
+    }];
+    
     [self.navigationController popViewControllerAnimated:YES];
     
     
@@ -87,6 +91,24 @@
     [textField resignFirstResponder];
     return NO;
 }
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==1) {
+        NSString *text=[alertView textFieldAtIndex:0].text;
+        NSLog(@"%@", [alertView textFieldAtIndex:0].text);
+        if (text.length<1) {
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Neuer Kurs"
+                                                          message:@"Name darf nicht leer sein: Abbrechen oder Name angeben"
+                                                         delegate:self cancelButtonTitle:@"Abbrechen" otherButtonTitles:@"ok", nil];
+            alert.alertViewStyle=UIAlertViewStylePlainTextInput;
+            
+            [alert show];
+            
+        }
+        _name.text=[alertView textFieldAtIndex:0].text;
+    }else if(buttonIndex==0){
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 
 UIGestureRecognizer *tapper;
 - (void)viewDidLoad
@@ -94,8 +116,13 @@ UIGestureRecognizer *tapper;
     [super viewDidLoad];
     [AllLections loadLections:self];
     // Do any additional setup after loading the view.
+    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Neuer Kurs"
+                                                  message:@"Bitte Name eintragen"
+                                                 delegate:self cancelButtonTitle:@"Abbrechen" otherButtonTitles:@"ok", nil];
+    alert.alertViewStyle=UIAlertViewStylePlainTextInput;
     
-    [super viewDidLoad];
+    [alert show];
+   // [super viewDidLoad];
     tapper = [[UITapGestureRecognizer alloc]
               initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = NO;

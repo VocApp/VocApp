@@ -29,7 +29,7 @@
     [self.lection addEntryWithOrigninal:self.original.text andTranslation:self.translation.text];
     _original.backgroundColor=[UIColor colorWithRed:0 green:1 blue:0 alpha:0.25];
     _translation.backgroundColor=[UIColor colorWithRed:0 green:1 blue:0 alpha:0.25];
-    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(clearTextfield) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(clearTextfield) userInfo:nil repeats:NO];
     
     
 }
@@ -38,8 +38,9 @@
 }
 
 - (IBAction)finishEditting:(id)sender {
-    [self.lection save];
-     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        [self.lection save];
+        [self.parent reload];
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)clearTextfield{

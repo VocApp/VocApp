@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchViewController : UICollectionViewController
-
+-(void)reload;
 @end

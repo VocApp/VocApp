@@ -10,5 +10,5 @@
 
 @interface CourseViewController : UICollectionViewController
 
-
+-(void)reload;
 @end
