@@ -72,11 +72,7 @@
                 if([_translation.text isEqualToString: _array[_actualWordIndex][1] ]){
                     NSLog(@"Richtig");
                     self.rightWords++;
-                    NSNumber *num1=self.stats[_actualWordIndex][0];
-                    NSNumber *num=self.stats[_actualWordIndex][1];
-                    NSInteger a=[num integerValue];
-                    NSInteger b=[num1 integerValue];
-                    self.stats[self.actualWordIndex]=@[[NSNumber numberWithInt:b+1],[NSNumber numberWithInt:a+1]];
+                    [self recordStats:YES];
                     self.VocappView.backgroundColor=[UIColor    colorWithRed:0.0f green:1.0 blue:0 alpha:0.25];
                    
                     _inCorrectMode=NO;
@@ -85,11 +81,7 @@
                     [self.progress setProgress:((self.actualWordIndexFloat)/self.maxWordIndexFloat) animated:YES];
                 }else{
                     NSLog(@"Falsch");
-                    NSNumber *num1=self.stats[_actualWordIndex][0];
-                    NSNumber *num=self.stats[_actualWordIndex][1];
-                    NSInteger a=[num integerValue];
-                    NSInteger b=[num1 integerValue];
-                    self.stats[self.actualWordIndex]=@[[NSNumber numberWithInt:b+1],[NSNumber numberWithInt:a]];
+                    [self recordStats:NO];
                     self.VocappView.backgroundColor=[UIColor    colorWithRed:1.0f green:0.0 blue:0 alpha:0.25];
                         _inCorrectMode=NO;
                     
@@ -119,6 +111,30 @@
     
 }
 
+-(void)recordStats:(BOOL)correction {
+    if (correction) {
+        NSNumber *num1=self.stats[_actualWordIndex][0];
+        NSNumber *num=self.stats[_actualWordIndex][1];
+        NSInteger a=[num integerValue];
+        NSInteger b=[num1 integerValue];
+        //Versuche Eins nach hinten verschieben und den letzten versuch eintragen
+        NSArray *newStat= @[[NSNumber numberWithInt:b+1],[NSNumber numberWithInt:a+1],@1,self.stats[_actualWordIndex][2],self.stats[_actualWordIndex][3]];
+        
+        self.stats[self.actualWordIndex]=newStat;
+    }else{
+        NSNumber *num1=self.stats[_actualWordIndex][0];
+        NSNumber *num=self.stats[_actualWordIndex][1];
+        NSInteger a=[num integerValue];
+        NSInteger b=[num1 integerValue];
+        //Versuche Eins nach hinten verschieben und den letzten versuch eintragen
+        NSArray *newStat= @[[NSNumber numberWithInt:b+1],[NSNumber numberWithInt:a],@0,self.stats[_actualWordIndex][2],self.stats[_actualWordIndex][3]];
+        
+        self.stats[self.actualWordIndex]=newStat;
+    
+    }
+
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -137,7 +153,8 @@
         
             NSInteger i;
             for(i=0;i<self.array.count;i++){
-                [self.stats addObject:@[@0,@0]];
+                //[0]-Anzahl Versuche [1]- Anzahl richtige [2]- letzter Versuch [3]- Vorletzter[4]- VorVorletzter Versuche
+                [self.stats addObject:@[@0,@0,@99,@99,@99]];
             }
         }
     }];

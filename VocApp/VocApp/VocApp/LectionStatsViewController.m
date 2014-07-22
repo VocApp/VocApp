@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tryCount;
 @property (weak, nonatomic) IBOutlet UILabel *right;
 @property (weak, nonatomic) IBOutlet UILabel *bewertung;
+@property (weak, nonatomic) IBOutlet UITextView *verlauf;
 
 @end
 
@@ -31,7 +32,50 @@
 {
     [super viewDidLoad];
     NSArray *stat=self.stats[@"Stats"];
+    NSArray *lec=self.lection[@"entries"];
     self.LectionName.text=self.lection[@"name"];
+    NSMutableAttributedString* text=[[NSMutableAttributedString alloc]init];
+    
+    for (int i=0; i<lec.count; i++) {
+        NSAttributedString* entry=[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@ - %@      ",lec[i][0],lec[i][1]]];
+        [text appendAttributedString:entry];
+        NSAttributedString* puffer=[[NSAttributedString alloc]initWithString:
+                                            [NSString stringWithFormat:@"    " ]];
+        [text appendAttributedString:puffer];
+        NSMutableAttributedString* verlauf=[[NSMutableAttributedString alloc]initWithString:
+                                            [NSString stringWithFormat:@"█ █ █   \r \r" ]];
+        
+        for (int j=0; j<6; j=j+2) {
+            if([stat[i][2+(j/2)] isEqual:@1]) {
+               [verlauf addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(j,j+1)];
+                
+            }
+            if([stat[i][2+(j/2)] isEqual:@0]) {
+                
+                [verlauf addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(j,j+1)];
+            }
+            if([stat[i][2+(j/2)] isEqual:@99]) {
+                
+                [verlauf addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(j,j+1)];
+            }
+          
+    }
+        [text appendAttributedString:[verlauf attributedSubstringFromRange:NSMakeRange(0,9)] ];
+        [text addAttribute:NSFontAttributeName
+                     value:[UIFont systemFontOfSize:20.0]
+                     range:NSMakeRange(0, text.length-1)];
+     
+        
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineSpacing = 30;
+        NSDictionary *dict = @{NSParagraphStyleAttributeName : paragraphStyle };
+        [text addAttributes:dict range:NSMakeRange(0, text.length-1)];
+        
+        
+        self.verlauf.attributedText=[text attributedSubstringFromRange:NSMakeRange(0, text.length-1)];
+        
+    }
+    
     NSLog(@" stat: %@",stat);
     float avgR=0,avgT=0;
     int i;

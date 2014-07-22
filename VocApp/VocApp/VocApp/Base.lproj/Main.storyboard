@@ -297,6 +297,34 @@
                                 <rect key="frame" x="20" y="302" width="280" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCh-G1-MlF">
+                                <rect key="frame" x="7" y="312" width="306" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Nach ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="rechts wischen">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" um zu korrigieren / für neues Wort">
+                                        <attributes>
+                                            <color key="NSColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1066,6 +1094,33 @@
                                 <rect key="frame" x="20" y="221" width="362" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jsg-uS-d4D">
+                                <rect key="frame" x="20" y="284" width="280" height="234"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ik-oe-hOo">
+                                <rect key="frame" x="180" y="250" width="43" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VocApp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lW6-5S-6q1">
+                                <rect key="frame" x="22" y="250" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Letzten 3 Versuche:       1      2     3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVA-fE-rVU">
+                                <rect key="frame" x="22" y="267" width="233" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1077,6 +1132,7 @@
                         <outlet property="bewertung" destination="pyF-iE-25n" id="Moq-aa-9kg"/>
                         <outlet property="right" destination="APz-tL-Sjc" id="X5v-pk-H5w"/>
                         <outlet property="tryCount" destination="pvq-C0-PiM" id="pCk-pI-CzR"/>
+                        <outlet property="verlauf" destination="Jsg-uS-d4D" id="5fP-bM-fBs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KpU-Nn-PwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1242,6 +1298,34 @@
                                 <rect key="frame" x="20" y="302" width="280" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2s-R1-RtI">
+                                <rect key="frame" x="7" y="312" width="306" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Nach ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="rechts wischen">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" um zu korrigieren / für neues Wort">
+                                        <attributes>
+                                            <color key="NSColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1315,7 +1399,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Vux-PC-pgg"/>
-        <segue reference="Tnp-Zv-QlS"/>
+        <segue reference="aay-31-nHw"/>
+        <segue reference="plG-fv-u3B"/>
     </inferredMetricsTieBreakers>
 </document>
